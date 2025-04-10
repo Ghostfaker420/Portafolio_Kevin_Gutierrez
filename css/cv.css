@@ -1,0 +1,41 @@
+/* CV Section */
+.cv-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.cv-sidebar {
+    background: rgba(18, 18, 18, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 100px;
+}
+
+.cv-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 3px solid var(--primary-color);
+}
+
+.cv-contact-info {
+    margin-bottom: 2rem;
+}
+
+.cv-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.cv-contact-item i {
+    margin-right: 10px;
+    color

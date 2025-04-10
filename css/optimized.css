@@ -1,0 +1,160 @@
+/* Optimizaciones de rendimiento y accesibilidad */
+
+/* Variables globales optimizadas */
+:root {
+    /* Colores principales con nombres semánticos */
+    --primary-color: #e85e27;
+    --secondary-color: #cac5b8;
+    --text-color: #f5f6fa;
+    --dark-bg: rgba(26, 26, 26, 0.9);
+    --darker-bg: rgba(18, 18, 18, 0.95);
+    --white: #fefcf0;
+    
+    /* Transiciones optimizadas - usar solo transform y opacity */
+    --transition-fast: transform 0.2s ease, opacity 0.2s ease;
+    --transition-normal: transform 0.3s ease, opacity 0.3s ease;
+    
+    /* Sombras optimizadas */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Optimizaciones generales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Prevenir FOUT (Flash of Unstyled Text) */
+    font-display: swap;
+    /* Mejorar rendimiento de texto */
+    text-rendering: optimizeSpeed;
+    /* Optimizar para dispositivos móviles */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimizaciones de imágenes */
+img, svg {
+    /* Evitar que las imágenes se estiren */
+    max-width: 100%;
+    height: auto;
+    /* Mejorar rendimiento de carga */
+    content-visibility: auto;
+}
+
+/* Optimizaciones para accesibilidad */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Mejorar contraste para accesibilidad */
+.btn-primary, .btn-secondary, .tour-button, form button {
+    /* Asegurar suficiente contraste */
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Optimizaciones para el loader */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--darker-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Optimizaciones para el menú móvil */
+.mobile-menu-btn {
+    /* Mejorar área táctil */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optimizaciones para formularios */
+input, textarea, button {
+    /* Mejorar usabilidad en móviles */
+    font-size: 16px;
+}
+
+/* Optimizaciones para animaciones */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        /* Desactivar animaciones si el usuario lo prefiere */
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .reveal, .spray-in, .rotate-in, .cascade-item {
+        /* Desactivar animaciones específicas */
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Optimizaciones para el visor 360° */
+#pano {
+    /* Mejorar rendimiento */
+    will-change: transform;
+    /* Prevenir problemas de rendimiento */
+    backface-visibility: hidden;
+}
+
+/* Optimizaciones para el scroll */
+.scroll-section {
+    /* Mejorar rendimiento de scroll */
+    will-change: opacity, transform;
+    /* Prevenir problemas de rendimiento */
+    backface-visibility: hidden;
+}
+
+/* Optimizaciones para el contraste de texto */
+.hero-content h1, .hero-content p {
+    /* Asegurar legibilidad */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Optimizaciones para botones y enlaces */
+a, button {
+    /* Mejorar área táctil en móviles */
+    padding: 0.5rem 1rem;
+    /* Transición optimizada */
+    transition: var(--transition-fast);
+}
+
+/* Optimizaciones para el footer */
+footer a {
+    /* Mejorar accesibilidad */
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Optimizaciones para el rendimiento de scroll */
+@supports (content-visibility: auto) {
+    section {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 500px;
+    }
+}

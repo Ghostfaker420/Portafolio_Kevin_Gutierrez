@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e85e27">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Portafolio de diseño interactivo y arte urbano con proyectos creativos, graffiti y tours virtuales 360°">
+    <meta name="author" content="Diseñador Interactivo">
+    <meta name="keywords" content="diseño interactivo, arte urbano, graffiti, tours 360, diseño web, portafolio">
+    <meta name="robots" content="index, follow">
+    <title>Portafolio de Diseño Interactivo & Arte Urbano</title>
+    
+    <!-- Preconexiones para mejorar rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Fuentes con display swap para mejor rendimiento -->
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Estilos críticos primero -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/optimized.css">
+    
+    <!-- Estilos no críticos con carga diferida -->
+    <link rel="stylesheet" href="css/modern-styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/stable-effects.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/urban-style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/gallery-styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/LOGO.svg" type="image/x-icon">
+    
+    <!-- Fallback para navegadores que no soportan JavaScript -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/modern-styles.css">
+        <link rel="stylesheet" href="css/stable-effects.css">
+        <link rel="stylesheet" href="css/urban-style.css">
+        <link rel="stylesheet" href="css/gallery-styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+</head>
+<body>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Loader de página con estilo urbano -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-content urban-texture">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Cargando experiencia urbana...</div>
+        </div>
+    </div>
+
+    <header role="banner">
+        <nav aria-label="Navegación principal">
+            <div class="logo">
+                <img src="images/LOGO.SVG" alt="Logo de Diseño Interactivo & Arte Urbano" width="150" height="50">
+            </div>
+            <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#tours">Tours 360°</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" role="main">
+        <section id="inicio" class="hero parallax-hero urban-texture">
+            <!-- Capas de parallax eliminadas para mayor estabilidad -->
+            <div class="hero-content">
+                <h1 class="text-gradient spray-in" data-text="Diseño Interactivo & Arte Urbano">Diseño Interactivo & Arte Urbano</h1>
+                <p class="spray-in">Creando experiencias digitales inmersivas y cautivadoras con un toque de arte callejero</p>
+                <div class="hero-buttons cascade-container animate">
+                    <a href="#proyectos" class="btn-primary hover-lift cascade-item" aria-label="Ver mis proyectos">Ver Proyectos</a>
+                    <a href="#contacto" class="btn-secondary hover-lift cascade-item" aria-label="Contactar conmigo">Contactar</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="about reveal scroll-section" aria-labelledby="sobre-mi-titulo">
+            <h2 id="sobre-mi-titulo" class="rotate-in">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text urban-texture">
+                    <p>Soy un diseñador interactivo y artista urbano apasionado por crear experiencias que combinan lo digital con lo callejero. Mi enfoque fusiona el diseño centrado en el usuario con la expresión artística urbana, creando interfaces y espacios que rompen barreras entre lo virtual y lo físico.</p>
+                    <p>Con experiencia en diseño web, modelado 3D, fotografía 360°, <strong>graffiti e intervenciones urbanas</strong>, ofrezco soluciones creativas que desafían lo convencional. Mi objetivo es transformar ideas en experiencias visuales impactantes que conecten con las personas y el entorno urbano.</p>
+                </div>
+                <div class="skills">
+                    <h3 id="habilidades-titulo" class="text-gradient">Habilidades</h3>
+                    <div class="skills-grid cascade-container animate" aria-labelledby="habilidades-titulo">
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-cube glow-effect" aria-hidden="true"></i>
+                            <h4>Diseño 3D</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-camera glow-effect" aria-hidden="true"></i>
+                            <h4>Fotografía 360°</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-code glow-effect" aria-hidden="true"></i>
+                            <h4>Desarrollo Web</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-spray-can glow-effect" aria-hidden="true"></i>
+                            <h4>Graffiti</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-city glow-effect" aria-hidden="true"></i>
+                            <h4>Arte Urbano</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-paint-brush glow-effect" aria-hidden="true"></i>
+                            <h4>Diseño UI/UX</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-video glow-effect" aria-hidden="true"></i>
+                            <h4>Edición de Video</h4>
+                        </div>
+                        <div class="skill-item cascade-item hover-lift">
+                            <i class="fas fa-vr-cardboard glow-effect" aria-hidden="true"></i>
+                            <h4>Realidad Virtual</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects reveal scroll-section" aria-labelledby="proyectos-titulo">
+            <h2 id="proyectos-titulo" class="rotate-in">Mis Proyectos</h2>
+            <div class="projects-grid cascade-container" role="list" aria-label="Lista de proyectos">
+                <!-- Los proyectos se agregarán dinámicamente con JavaScript -->
+                <noscript>
+                    <div class="error-message">
+                        <p>Para ver los proyectos, por favor habilita JavaScript en tu navegador.</p>
+                    </div>
+                </noscript>
+            </div>
+        </section>
+
+        <section id="tours" class="tours reveal scroll-section" aria-labelledby="tours-titulo">
+            <h2 id="tours-titulo" class="rotate-in">Tours Virtuales 360°</h2>
+            <div class="tours-container cascade-container animate">
+                <div class="tour-viewer" role="region" aria-label="Visor de tour 360°">
+                    <div id="pano">
+                        <!-- Mensaje de fallback -->
+                        <div style="color: white; text-align: center; padding: 20px; background-color: rgba(0,0,0,0.7);">
+                            Cargando visor 360°...
+                        </div>
+                        <!-- Indicador de carga -->
+                        <div class="loading-indicator" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="tours-list" role="tablist" aria-label="Lista de tours disponibles">
+                    <!-- Los tours se agregarán dinámicamente con JavaScript -->
+                    <noscript>
+                        <div class="error-message">
+                            <p>Para ver los tours 360°, por favor habilita JavaScript en tu navegador.</p>
+                        </div>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact reveal scroll-section" aria-labelledby="contacto-titulo">
+            <h2 id="contacto-titulo" class="rotate-in">Contacto</h2>
+            <div class="contact-form border-gradient">
+                <form id="contactForm" class="cascade-container animate" aria-label="Formulario de contacto" novalidate>
+                    <div class="form-group cascade-item">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required aria-required="true">
+                    </div>
+                    <div class="form-group cascade-item">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Tu email" required aria-required="true">
+                    </div>
+                    <div class="form-group cascade-item">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Tu mensaje" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="hover-lift cascade-item" aria-label="Enviar formulario de contacto">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/LOGO.SVG" alt="Logo de Diseño Interactivo & Arte Urbano" width="150" height="50">
+                <p>Fusionando el diseño interactivo con el arte urbano para crear experiencias que rompen barreras entre lo digital y lo callejero.</p>
+                <div class="social-links" aria-label="Redes sociales">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Enlaces de pie de página">
+                <h3 id="enlaces-rapidos">Enlaces Rápidos</h3>
+                <ul aria-labelledby="enlaces-rapidos">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#tours">Tours 360°</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="footer-contact">
+                <h3 id="info-contacto">Contacto</h3>
+                <address aria-labelledby="info-contacto">
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@miportafolio.com">info@miportafolio.com</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+34123456789">+34 123 456 789</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Madrid, España</p>
+                </address>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Portafolio de Diseño Interactivo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts críticos con defer para mejor rendimiento -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/panolens@0.10.4/build/panolens.min.js" defer></script>
+    
+    <!-- Scripts de la aplicación -->
+    <script src="js/main.js" defer></script>
+    <script src="js/interactive.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/performance.js" defer></script>
+
+    <!-- Scroll Reveal para animaciones -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+</body>
+</html>

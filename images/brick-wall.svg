@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Definición de patrones y texturas -->
+  <defs>
+    <!-- Textura de ladrillo realista -->
+    <pattern id="brick-pattern" patternUnits="userSpaceOnUse" width="100" height="50" patternTransform="scale(1.5) rotate(0)">
+      <!-- Fondo de mortero/cemento -->
+      <rect width="100" height="50" fill="#2a2a2a" />
+      
+      <!-- Primera fila de ladrillos -->
+      <rect x="0" y="0" width="45" height="20" fill="#8B4513" />
+      <rect x="47" y="0" width="45" height="20" fill="#A0522D" />
+      
+      <!-- Segunda fila de ladrillos (desplazada) -->
+      <rect x="-25" y="22" width="45" height="20" fill="#A52A2A" />
+      <rect x="22" y="22" width="45" height="20" fill="#8B4513" />
+      <rect x="69" y="22" width="45" height="20" fill="#A0522D" />
+      
+      <!-- Detalles y texturas en los ladrillos -->
+      <rect x="5" y="3" width="35" height="14" fill="#8B4513" opacity="0.7" />
+      <rect x="52" y="3" width="35" height="14" fill="#A0522D" opacity="0.7" />
+      <rect x="-20" y="25" width="35" height="14" fill="#A52A2A" opacity="0.7" />
+      <rect x="27" y="25" width="35" height="14" fill="#8B4513" opacity="0.7" />
+      <rect x="74" y="25" width="35" height="14" fill="#A0522D" opacity="0.7" />
+      
+      <!-- Grietas y detalles para dar realismo -->
+      <path d="M10,5 L15,3 L20,6 L25,4" stroke="#703000" stroke-width="0.5" fill="none" opacity="0.6" />
+      <path d="M55,8 L60,10 L65,7 L70,9" stroke="#703000" stroke-width="0.5" fill="none" opacity="0.6" />
+      <path d="M-15,27 L-10,29 L-5,26 L0,28" stroke="#703000" stroke-width="0.5" fill="none" opacity="0.6" />
+      <path d="M32,30 L37,28 L42,31 L47,29" stroke="#703000" stroke-width="0.5" fill="none" opacity="0.6" />
+      <path d="M79,26 L84,28 L89,25 L94,27" stroke="#703000" stroke-width="0.5" fill="none" opacity="0.6" />
+      
+      <!-- Líneas de mortero/cemento -->
+      <line x1="0" y1="21" x2="100" y2="21" stroke="#2a2a2a" stroke-width="2" />
+      <line x1="0" y1="43" x2="100" y2="43" stroke="#2a2a2a" stroke-width="2" />
+      <line x1="46" y1="0" x2="46" y2="21" stroke="#2a2a2a" stroke-width="2" />
+      <line x1="22" y1="22" x2="22" y2="43" stroke="#2a2a2a" stroke-width="2" />
+      <line x1="69" y1="22" x2="69" y2="43" stroke="#2a2a2a" stroke-width="2" />
+    </pattern>
+    
+    <!-- Textura de graffiti/spray -->
+    <filter id="spray-texture" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="5" />
+      <feDisplacementMap in="SourceGraphic" scale="20" />
+    </filter>
+    
+    <!-- Textura de desgaste urbano -->
+    <filter id="urban-texture" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.15 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  
+  <!-- Fondo de pared de ladrillos -->
+  <rect width="800" height="600" fill="url(#brick-pattern)" />
+  
+  <!-- Capa de desgaste urbano -->
+  <rect width="800" height="600" fill="rgba(0,0,0,0.1)" filter="url(#urban-texture)" />
+  
+  <!-- Elementos de graffiti estilizados -->
+  <g transform="translate(600, 150) rotate(15)" filter="url(#spray-texture)">
+    <path d="M0,0 C20,-20 40,20 60,0 S80,-20 100,0" stroke="#e85e27" stroke-width="8" fill="none" opacity="0.8" />
+  </g>
+  
+  <g transform="translate(150, 450) rotate(-10)" filter="url(#spray-texture)">
+    <path d="M0,0 C10,-30 50,30 90,0" stroke="#3498db" stroke-width="6" fill="none" opacity="0.7" />
+  </g>
+  
+  <!-- Manchas y marcas urbanas -->
+  <circle cx="400" cy="300" r="50" fill="rgba(0,0,0,0.15)" />
+  <circle cx="200" cy="150" r="30" fill="rgba(255,255,255,0.05)" />
+  <circle cx="600" cy="400" r="40" fill="rgba(0,0,0,0.1)" />
+  
+  <!-- Líneas de desgaste -->
+  <line x1="0" y1="200" x2="800" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="2" />
+  <line x1="0" y1="400" x2="800" y2="380" stroke="rgba(0,0,0,0.05)" stroke-width="3" />
+</svg>
