@@ -1,0 +1,105 @@
+/**
+ * Mejoras tipográficas para el sitio web
+ * Enfoque en legibilidad y estilo tecnológico
+ */
+
+/* Mejoras generales para la tipografía Big Shoulders Display */
+body {
+    /* Mejora del interlineado general */
+    line-height: 1.7;
+    /* Mejora del tracking general */
+    letter-spacing: 0.02em;
+    /* Suavizado de fuentes para mejor legibilidad */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejoras para títulos */
+h1, h2, h3, h4, h5, h6, .section-title, .navbar__logo-text, .hero__title, .collection-title, .footer__title {
+    /* Tracking más amplio para títulos */
+    letter-spacing: 0.04em;
+    /* Ajuste de peso visual */
+    font-weight: 700;
+    /* Mejora de espaciado inferior */
+    margin-bottom: 0.8em;
+}
+
+/* Ajustes específicos para el título principal */
+.hero__title {
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para subtítulos */
+.hero__subtitle, .portfolio-subtitle {
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Mejoras para párrafos y texto de cuerpo */
+p, .portfolio-card p, .about__bio, .experience-item p, li {
+    /* Mejor interlineado para textos largos */
+    line-height: 1.8;
+    /* Tracking ligeramente aumentado para mejor legibilidad */
+    letter-spacing: 0.015em;
+    /* Espaciado entre párrafos */
+    margin-bottom: 1.2em;
+}
+
+/* Ajustes para elementos de navegación */
+.navbar__link {
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+/* Mejoras para tarjetas de portafolio */
+.portfolio-card {
+    /* Mejora del espaciado interno */
+    padding: 2.5rem;
+}
+
+.portfolio-card h3 {
+    letter-spacing: 0.035em;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+}
+
+/* Ajustes para listas */
+.portfolio-card li {
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Mejoras para elementos de contacto */
+.contact-item {
+    letter-spacing: 0.02em;
+}
+
+/* Ajustes para experiencia laboral */
+.experience-title, .experience-company {
+    letter-spacing: 0.025em;
+}
+
+/* Mejoras para secciones de habilidades */
+.skill-category h4 {
+    letter-spacing: 0.03em;
+    margin-bottom: 1.2rem;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0.03em;
+    }
+    
+    p, li {
+        line-height: 1.7;
+    }
+}

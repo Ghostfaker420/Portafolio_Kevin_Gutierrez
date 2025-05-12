@@ -1,0 +1,83 @@
+/* Aplica a imágenes que necesitan fondo transparente explícito si tienen clase */
+.transparent-png {
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.transparent-png.loaded {
+    opacity: 1;
+}
+
+/* Estilos consistentes para todas las imágenes de stickers/galería */
+.sticker-image, /* Usado en index, galeria, coleccion */
+.collection-grid img, /* Regla anterior, ahora cubierta por .sticker-image */
+.gallery-item img /* Regla anterior, ¿se usa .gallery-item? */
+{
+    display: block; /* Evita espacio extra */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que se vea todo el sticker */
+    background-color: transparent; /* Asegura fondo transparente */
+    opacity: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover para imágenes */
+.sticker-item:hover img,
+.sticker-image.hover-lift:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos para el overlay de stickers */
+.sticker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sticker-item:hover .sticker-overlay,
+.sticker-image:hover .sticker-overlay {
+    opacity: 1;
+}
+
+.sticker-view {
+    color: white;
+    font-size: 2rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.sticker-item:hover .sticker-view {
+    transform: scale(1);
+}
+
+/* Reglas generales para asegurar que todas las imágenes PNG tengan 100% de opacidad */
+img[src$=".PNG"], img[src$=".png"] {
+    background-color: transparent;
+    opacity: 1;
+}
+
+/* Clase sticker-img no parece usarse, eliminar o renombrar si es necesaria */
+/* 
+.sticker-img {
+    background-color: transparent;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.sticker-img:hover {
+    transform: scale(1.05);
+}
+*/

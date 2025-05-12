@@ -22,30 +22,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Estilos críticos primero -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/optimized.css">
+    <!-- Componentes -->
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/about.css">
+    <link rel="stylesheet" href="css/components/gallery.css">
+    <link rel="stylesheet" href="css/components/collections.css">
+    <link rel="stylesheet" href="css/components/virtual-experiences.css">
+    <link rel="stylesheet" href="css/components/contact.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/image-viewer.css">
+    <link rel="stylesheet" href="css/components/panorama.css">
     
-    <!-- Estilos no críticos con carga diferida -->
-    <link rel="stylesheet" href="css/modern-styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/stable-effects.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/urban-style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/gallery-styles.css" media="print" onload="this.media='all'">
+    <!-- Utilidades -->
+    <link rel="stylesheet" href="css/typography-enhancement.css">
+    <link rel="stylesheet" href="css/transparent-images.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/thumbnail-control.css">
+    <link rel="stylesheet" href="css/fixes.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/LOGO.svg" type="image/x-icon">
-    
-    <!-- Fallback para navegadores que no soportan JavaScript -->
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/modern-styles.css">
-        <link rel="stylesheet" href="css/stable-effects.css">
-        <link rel="stylesheet" href="css/urban-style.css">
-        <link rel="stylesheet" href="css/gallery-styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
 </head>
 <body>
     <!-- Skip link para accesibilidad -->
@@ -60,188 +59,582 @@
     </div>
 
     <header role="banner">
-        <nav aria-label="Navegación principal">
-            <div class="logo">
-                <img src="images/LOGO.SVG" alt="Logo de Diseño Interactivo & Arte Urbano" width="150" height="50">
-            </div>
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <a href="#" class="navbar__logo" aria-label="Inicio">
+                <img src="images/LOGO.svg" alt="Logo de Diseño Interactivo & Arte Urbano" width="60" height="60">
+                <span class="navbar__logo-text">SUMMONER</span>
+            </a>
             <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#inicio" class="active" aria-current="page">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#tours">Tours 360°</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <div class="navbar__nav" id="nav-links">
+                <a href="#inicio" class="navbar__link active" aria-current="page">Inicio</a>
+                <a href="#sobre-mi" class="navbar__link">Sobre Mí</a>
+                <a href="#proyectos" class="navbar__link">Proyectos</a>
+                <a href="#curriculum" class="navbar__link">Curriculum</a>
+                <a href="#experiencias" class="navbar__link">Experiencias</a>
+                <a href="#contacto" class="navbar__link">Contacto</a>
+            </div>
         </nav>
     </header>
+            <a href="#proyectos" class="navbar__link">Proyectos</a>
+            <a href="#experiencias" class="navbar__link">Experiencias</a>
+            <a href="#contacto" class="navbar__link">Contacto</a>
+        </div>
+    </nav>
 
-    <main id="main" role="main">
-        <section id="inicio" class="hero parallax-hero urban-texture">
-            <!-- Capas de parallax eliminadas para mayor estabilidad -->
-            <div class="hero-content">
-                <h1 class="text-gradient spray-in" data-text="Diseño Interactivo & Arte Urbano">Diseño Interactivo & Arte Urbano</h1>
-                <p class="spray-in">Creando experiencias digitales inmersivas y cautivadoras con un toque de arte callejero</p>
-                <div class="hero-buttons cascade-container animate">
-                    <a href="#proyectos" class="btn-primary hover-lift cascade-item" aria-label="Ver mis proyectos">Ver Proyectos</a>
-                    <a href="#contacto" class="btn-secondary hover-lift cascade-item" aria-label="Contactar conmigo">Contactar</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre-mi" class="about reveal scroll-section" aria-labelledby="sobre-mi-titulo">
-            <h2 id="sobre-mi-titulo" class="rotate-in">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text urban-texture">
-                    <p>Soy un diseñador interactivo y artista urbano apasionado por crear experiencias que combinan lo digital con lo callejero. Mi enfoque fusiona el diseño centrado en el usuario con la expresión artística urbana, creando interfaces y espacios que rompen barreras entre lo virtual y lo físico.</p>
-                    <p>Con experiencia en diseño web, modelado 3D, fotografía 360°, <strong>graffiti e intervenciones urbanas</strong>, ofrezco soluciones creativas que desafían lo convencional. Mi objetivo es transformar ideas en experiencias visuales impactantes que conecten con las personas y el entorno urbano.</p>
-                </div>
-                <div class="skills">
-                    <h3 id="habilidades-titulo" class="text-gradient">Habilidades</h3>
-                    <div class="skills-grid cascade-container animate" aria-labelledby="habilidades-titulo">
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-cube glow-effect" aria-hidden="true"></i>
-                            <h4>Diseño 3D</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-camera glow-effect" aria-hidden="true"></i>
-                            <h4>Fotografía 360°</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-code glow-effect" aria-hidden="true"></i>
-                            <h4>Desarrollo Web</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-spray-can glow-effect" aria-hidden="true"></i>
-                            <h4>Graffiti</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-city glow-effect" aria-hidden="true"></i>
-                            <h4>Arte Urbano</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-paint-brush glow-effect" aria-hidden="true"></i>
-                            <h4>Diseño UI/UX</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-video glow-effect" aria-hidden="true"></i>
-                            <h4>Edición de Video</h4>
-                        </div>
-                        <div class="skill-item cascade-item hover-lift">
-                            <i class="fas fa-vr-cardboard glow-effect" aria-hidden="true"></i>
-                            <h4>Realidad Virtual</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="proyectos" class="projects reveal scroll-section" aria-labelledby="proyectos-titulo">
-            <h2 id="proyectos-titulo" class="rotate-in">Mis Proyectos</h2>
-            <div class="projects-grid cascade-container" role="list" aria-label="Lista de proyectos">
-                <!-- Los proyectos se agregarán dinámicamente con JavaScript -->
-                <noscript>
-                    <div class="error-message">
-                        <p>Para ver los proyectos, por favor habilita JavaScript en tu navegador.</p>
-                    </div>
-                </noscript>
-            </div>
-        </section>
-
-        <section id="tours" class="tours reveal scroll-section" aria-labelledby="tours-titulo">
-            <h2 id="tours-titulo" class="rotate-in">Tours Virtuales 360°</h2>
-            <div class="tours-container cascade-container animate">
-                <div class="tour-viewer" role="region" aria-label="Visor de tour 360°">
-                    <div id="pano">
-                        <!-- Mensaje de fallback -->
-                        <div style="color: white; text-align: center; padding: 20px; background-color: rgba(0,0,0,0.7);">
-                            Cargando visor 360°...
-                        </div>
-                        <!-- Indicador de carga -->
-                        <div class="loading-indicator" aria-hidden="true"></div>
-                    </div>
-                </div>
-                <div class="tours-list" role="tablist" aria-label="Lista de tours disponibles">
-                    <!-- Los tours se agregarán dinámicamente con JavaScript -->
-                    <noscript>
-                        <div class="error-message">
-                            <p>Para ver los tours 360°, por favor habilita JavaScript en tu navegador.</p>
-                        </div>
-                    </noscript>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="contact reveal scroll-section" aria-labelledby="contacto-titulo">
-            <h2 id="contacto-titulo" class="rotate-in">Contacto</h2>
-            <div class="contact-form border-gradient">
-                <form id="contactForm" class="cascade-container animate" aria-label="Formulario de contacto" novalidate>
-                    <div class="form-group cascade-item">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required aria-required="true">
-                    </div>
-                    <div class="form-group cascade-item">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Tu email" required aria-required="true">
-                    </div>
-                    <div class="form-group cascade-item">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" placeholder="Tu mensaje" required aria-required="true"></textarea>
-                    </div>
-                    <button type="submit" class="hover-lift cascade-item" aria-label="Enviar formulario de contacto">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/LOGO.SVG" alt="Logo de Diseño Interactivo & Arte Urbano" width="150" height="50">
-                <p>Fusionando el diseño interactivo con el arte urbano para crear experiencias que rompen barreras entre lo digital y lo callejero.</p>
-                <div class="social-links" aria-label="Redes sociales">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <nav class="footer-links" aria-label="Enlaces de pie de página">
-                <h3 id="enlaces-rapidos">Enlaces Rápidos</h3>
-                <ul aria-labelledby="enlaces-rapidos">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#tours">Tours 360°</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="footer-contact">
-                <h3 id="info-contacto">Contacto</h3>
-                <address aria-labelledby="info-contacto">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@miportafolio.com">info@miportafolio.com</a></p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+34123456789">+34 123 456 789</a></p>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Madrid, España</p>
-                </address>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 Portafolio de Diseño Interactivo. Todos los derechos reservados.</p>
+    <header class="header">
+        <div class="hero">
+            <p class="hero__subtitle">Arte Urbano & Diseño</p>
+            <div class="hero__cta">
+                <a href="#proyectos" class="btn btn--primary">Ver Proyectos</a>
             </div>
         </div>
-    </footer>
+    </header>
 
-    <!-- Scripts críticos con defer para mejor rendimiento -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/panolens@0.10.4/build/panolens.min.js" defer></script>
+    <main id="main-content">
+
+    <!-- Sección eliminada y movida al inicio de la página -->
     
-    <!-- Scripts de la aplicación -->
-    <script src="js/main.js" defer></script>
-    <script src="js/interactive.js" defer></script>
-    <script src="js/gallery.js" defer></script>
-    <script src="js/performance.js" defer></script>
+    <section class="section about" id="sobre-mi" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">Perfil Profesional</h2>
+            <div class="about__container">
+                <div class="about__image" role="img" aria-label="Retrato del artista SUMMONER" loading="lazy"></div>
+                <div class="about__content">
+                    <div class="about__bio">
+                        <p>Soy un diseñador interactivo con sólida experiencia en el desarrollo de experiencias de usuario inmersivas y entornos de realidad virtual y aumentada. Destaco por mi conocimiento en diseño 3D, con especial énfasis modelado tridimensional y efectos especiales.</p>
+                        <p class="mt-2">Mi formación como muralista me aporta una perspectiva única para integrar elementos artísticos en intervenciones espaciales significativas. Cuento con habilidades avanzadas en postproducción que me permiten crear experiencias inmersivas de alto impacto visual.</p>
+                    </div>
+                    
+                    <div class="contact-info mt-3">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Medellín, 050029</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>3216032226</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>kevinfguti2001@outlook.com</span>
+                        </div>
+                    </div>
 
-    <!-- Scroll Reveal para animaciones -->
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+                    <h3 class="about__skills-title">Mis Habilidades</h3>
+                    <div class="about__skills-grid">
+                        <div class="skill" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Diseño de Experiencias Interactivas</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Modelado 3D</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Muralismo y Arte Urbano</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Adobe Suite</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Serigrafía</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill__name">Comunicación Visual</div>
+                            <div class="skill__bar">
+                                <div class="skill__progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="about__skills-title mt-4">Formación Académica</h3>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-company">FUNDACIÓN UNIVERSITARIA BELLAS ARTES</div>
+                            <div class="experience-period">2021</div>
+                        </div>
+                        <div class="experience-title">Diseño Interactivo</div>
+                        <div class="experience-location">Medellín</div>
+                    </div>
+
+                    <a href="CV_Basico_portfolio.txt" class="btn btn--outline mt-3" download aria-label="Descargar Curriculum Vitae">Descargar CV</a>
+                </div>
+            </div>
+
+        <div class="timeline" role="list">
+                <div class="timeline__item" role="listitem">
+                    <div class="timeline__content">
+                        <time class="timeline__date" datetime="2020-2025">2020-2025</time>
+                        <h3 class="timeline__title">ALMACÉN KEVIN - Cajero</h3>
+                        <p class="timeline__description">Gestión de transacciones financieras y atención al cliente personalizada.</p>
+                        <ul class="timeline__details">
+                            <li>Gestión responsable de transacciones financieras con excelente ética de trabajo</li>
+                            <li>Resolución eficiente y rápida de incidencias con clientes</li>
+                            <li>Manejo de caja y sistemas de punto de venta con precisión</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline__item" role="listitem">
+                    <div class="timeline__content">
+                        <time class="timeline__date" datetime="2021">2021</time>
+                        <h3 class="timeline__title">FUNDACIÓN UNIVERSITARIA BELLAS ARTES</h3>
+                        <p class="timeline__description">Diseño Interactivo con especialización en intervenciones artísticas urbanas.</p>
+                        <p class="timeline__highlight">Reconocimiento por proceso creativo destacado</p>
+                    </div>
+                </div>
+                <div class="timeline__item" role="listitem">
+                    <div class="timeline__content">
+                        <time class="timeline__date" datetime="2024">2024</time>
+                        <h3 class="timeline__title">Proyectos de Realidad Virtual</h3>
+                        <p class="timeline__description">Desarrollo de experiencias inmersivas y entornos interactivos.</p>
+                    </div>
+                </div>
+                <div class="timeline__item" role="listitem">
+                    <div class="timeline__content">
+                        <time class="timeline__date" datetime="2023">2023</time>
+                        <h3 class="timeline__title">Diseño de Espacios y Personajes</h3>
+                        <p class="timeline__description">Creación de conceptos visuales para proyectos digitales y físicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <!-- Projects Section -->
+    <section class="section projects" id="proyectos" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title">Mis Colecciones</h2>
+        <p class="section-subtitle">Explora mis series de diseños y arte urbano</p>
+        
+        <div class="collections-grid">
+            <!-- Colección 1 -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Serie Original</span>
+                    <h3 class="collection-title">Sticker Colección 1</h3>
+                    <p class="collection-description">Una colección única de diseños inspirados en el arte urbano contemporáneo, fusionando elementos gráficos con mensajes urbanos.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 6 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid">
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1723.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1723.PNG" alt="Sticker 1 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1724.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1724.PNG" alt="Sticker 2 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1725.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1725.PNG" alt="Sticker 3 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1726.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1726.PNG" alt="Sticker 4 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1727.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1727.PNG" alt="Sticker 5 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Stickers Tanda 1/IMG_1728.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Stickers Tanda 1/IMG_1728.PNG" alt="Sticker 6 - Serie Original" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- Colección 2 -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Nueva Serie</span>
+                    <h3 class="collection-title">Sticker Colección 2</h3>
+                    <p class="collection-description">Explorando nuevas técnicas y estilos en el arte urbano, con un enfoque en la expresión visual y la narrativa gráfica contemporánea.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 6 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid">
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1781.jpg" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1781.jpg" alt="Sticker 7 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1782.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1782.PNG" alt="Sticker 8 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1783.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1783.PNG" alt="Sticker 9 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1784.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1784.PNG" alt="Sticker 10 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1786.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1786.PNG" alt="Sticker 11 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Sticker Tanda 2/IMG_1787.PNG" title="Ver imagen en tamaño completo">
+                            <img src="images/Sticker Tanda 2/IMG_1787.PNG" alt="Sticker 12 - Nueva Serie" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- Colección: Pokémon -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Exposición Urbana 2024</span>
+                    <h3 class="collection-title">Pokémon Series</h3>
+                    <p class="collection-description">Esta vista panorámica 360° te permite explorar uno de mis proyectos de arte urbano como si estuvieras allí. Navega por el espacio haciendo clic y arrastrando para descubrir todos los detalles de la intervención.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 4 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid">
+                    <div class="sticker-item">
+                        <a href="images/Pokemon/IMG_2299.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Pokemon/IMG_2299.JPG" alt="Pokémon Arte Urbano 1" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Pokemon/IMG_2392.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Pokemon/IMG_2392.JPG" alt="Pokémon Arte Urbano 2" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Pokemon/IMG_2402.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Pokemon/IMG_2402.JPG" alt="Pokémon Arte Urbano 3" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Pokemon/IMG_2404.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Pokemon/IMG_2404.JPG" alt="Pokémon Arte Urbano 4" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Nueva Colección: Carteles -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Gráfico</span>
+                    <h3 class="collection-title">Carteles</h3>
+                    <p class="collection-description">Diseños de cartelería variada, explorando estilos y mensajes visuales.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 7 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid"> <!-- Reutilizamos stickers-grid, aunque sean carteles -->
+                    <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2396.jpeg" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2396.jpeg" alt="Cartel 1" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2390.jpeg" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2390.jpeg" alt="Cartel 2" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2389.jpeg" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2389.jpeg" alt="Cartel 3" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2298.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2298.JPG" alt="Cartel 4" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2297.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2297.JPG" alt="Cartel 5" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Carteles/IMG_2296.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Carteles/IMG_2296.JPG" alt="Cartel 6" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Mostramos 6, la 7ma se vería en la página completa -->
+                </div>
+                <div class="text-center">
+                    <!-- Enlace necesitará una página real (ej. carteles.html) -->
+                    
+                </div>
+            </article>
+
+             <!-- Nueva Colección: Diseño de personajes -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Conceptual</span>
+                    <h3 class="collection-title">Diseño de Personajes</h3>
+                    <p class="collection-description">Creaciones de personajes originales, explorando diferentes estilos y conceptos.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 9 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid"> 
+                    <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2300.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2300.JPG" alt="Personaje 1" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2301.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2301.JPG" alt="Personaje 2" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2302.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2302.JPG" alt="Personaje 3" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2303.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2303.JPG" alt="Personaje 4" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2304.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2304.JPG" alt="Personaje 5" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Diseño de personajes/IMG_2305.JPG" title="Ver imagen en tamaño completo">
+                            <img src="images/Diseño de personajes/IMG_2305.JPG" alt="Personaje 6" class="sticker-image" loading="lazy">
+                            <div class="sticker-overlay">
+                                <span class="sticker-view"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Mostramos 6, las otras se verían en la página completa -->
+                </div>
+                <div class="text-center">
+                    <!-- Enlace necesitará una página real (ej. personajes.html) -->
+                    
+                </div>
+            </article>
+
+            <!-- Nueva Colección: GIFs Animados -->
+            <article class="collection-card fade-in">
+                <div class="collection-header">
+                    <span class="collection-badge">Animado</span>
+                    <h3 class="collection-title">Colección de GIFs</h3>
+                    <p class="collection-description">Una selección de animaciones cortas y GIFs creados.</p>
+                    <div class="collection-meta">
+                        <span><i class="fas fa-images" aria-hidden="true"></i> 2 Diseños</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                    </div>
+                </div>
+                <div class="stickers-grid"> <!-- Reutilizamos stickers-grid para mantener el estilo -->
+                    <div class="sticker-item">
+                        <!-- Enlace puede ser directo al GIF si no hay página de detalle -->
+                        <a href="images/Animaciones/IMG_2435.gif" title="Ver GIF 1">
+                            <img src="images/Animaciones/IMG_2435.gif" alt="GIF Animado 1" class="sticker-image" loading="lazy">
+                            <!-- No necesitamos overlay de zoom para GIFs que se reproducen solos -->
+                        </a>
+                    </div>
+                    <div class="sticker-item">
+                        <a href="images/Animaciones/IMG_2436.gif" title="Ver GIF 2">
+                            <img src="images/Animaciones/IMG_2436.gif" alt="GIF Animado 2" class="sticker-image" loading="lazy">
+                        </a>
+                    </div>
+                    <!-- Puedes añadir más si tienes más GIFs -->
+                </div>
+                <div class="text-center">
+                    <!-- Enlace necesitará una página real si quieres mostrar más -->
+                    
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Sección de Experiencias Virtuales 360° -->
+    <section class="section virtual-experiences" id="experiencias" aria-labelledby="experiences-title">
+            <h2 class="section-title" id="experiences-title">Experiencias Virtuales</h2>
+            <p class="section-subtitle">Explora mis proyectos en formato inmersivo 360°</p>
+            
+            <div class="experience-container">
+                <div class="experience-card">
+                    <div class="panorama-wrapper">
+                        <div id="panorama" class="panorama-viewer"></div>
+                        <div id="panorama-loading" class="panorama-loading">
+                            <div class="panorama-loading-spinner"></div>
+                            <p>Cargando experiencia 360°...</p>
+                        </div>
+                        <div class="panorama-controls">
+                            <button id="fullscreen-btn" class="panorama-btn" aria-label="Ver en pantalla completa">
+                                <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
+                            </button>
+                            <button id="info-btn" class="panorama-btn" aria-label="Ver información">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            </button>
+                            <button id="rotate-btn" class="panorama-btn" aria-label="Activar/desactivar rotación automática">
+                                <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <h3>Exposición Urbana 2024</h3>
+                    <p>Esta vista panorámica 360° te permite explorar uno de mis proyectos de arte urbano como si estuvieras allí. Navega por el espacio haciendo clic y arrastrando para descubrir todos los detalles de la intervención.</p>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Centro Cultural</span>
+                        <span><i class="far fa-calendar-alt" aria-hidden="true"></i> Marzo 2024</span>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <!-- Script para la experiencia panorámica 360° -->
+    <!-- El script ya está incluido en el head -->
+    
+    <!-- Script principal -->
+    <script src="js/main.js" defer></script>
+
+    <!-- La sección de contacto ha sido eliminada para evitar duplicación. 
+         La información de contacto se encuentra en el footer. -->
+    <div id="contacto"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__social">
+                <h3 class="footer__title">Sígueme</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/palomo_summers/" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer__info">
+                <h3 class="footer__title">Contacto Rápido</h3>
+                <ul class="footer__contact-list">
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:kevin.gutierrez@bellasartesmed.edu.co">kevin.gutierrez@bellasartesmed.edu.co</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/573216032226?text=¡Hola! Me interesa conocer más sobre tu trabajo" target="_blank" rel="noopener noreferrer">+57 321 603 2226</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p class="copyright">© 2024 SUMMONER Arte Urbano. Todos los derechos reservados. Prohibida la reproducción total o parcial sin autorización expresa del autor.</p>
+            <p class="footer__credits">Diseñado con <i class="fas fa-heart" aria-hidden="true"></i> por SUMMONER</p>
+        </div>
+    </footer>
 </body>
 </html>

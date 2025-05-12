@@ -1,0 +1,82 @@
+/* Estilos para el visor de imágenes */
+
+.image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-viewer__content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+.image-viewer__img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto; /* Asegura que la imagen no se estire */
+    height: auto; /* Mantiene la proporción de aspecto */
+    display: block;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+}
+
+.image-viewer__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.image-viewer__close:hover {
+    transform: rotate(90deg);
+    color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .image-viewer__content {
+        max-width: 95%;
+    }
+    
+    .image-viewer__img {
+        max-height: 80vh;
+    }
+    
+    .image-viewer__close {
+        top: -35px;
+        right: 0;
+    }
+}

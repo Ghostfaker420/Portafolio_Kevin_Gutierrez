@@ -1,0 +1,43 @@
+:root {
+    /* Colores principales - compatibles con base.css */
+    --primary-color: #e85e27;
+    --primary-color-light: #ff6a30;
+    --primary-color-dark: #c94d1b;
+    --secondary-color: #cac5b8;
+    --text-color: #f5f6fa;
+    --dark-bg: rgba(26, 26, 26, 0.5);
+    --darker-bg: rgba(18, 18, 18, 0.7);
+    --white: #fefcf0;
+    
+    /* Colores - compatibles con main.css */
+    --color-bg: #0a0a0a;
+    --color-accent: #ff3e00;
+    --color-text: #ffffff;
+    --color-text-alt: #a0a0a0;
+    --color-card-bg: rgba(25, 25, 25, 0.8);
+    
+    /* Tipografía */
+    --font-main: 'Big Shoulders Display', sans-serif;
+    --font-accent: 'Rampart One', cursive;
+    --font-title: 'Rampart One', cursive;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    
+    /* Bordes */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    
+    /* Sombras */
+    --shadow-normal: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-large: 0 15px 30px rgba(0, 0, 0, 0.3);
+}

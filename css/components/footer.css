@@ -1,0 +1,126 @@
+/* Estilos para el footer unificado */
+
+.footer {
+    background-color: rgba(15, 15, 15, 0.95);
+    padding: 3rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 62, 0, 0.05) 0%, rgba(10, 10, 10, 0) 70%);
+    pointer-events: none;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+    position: relative;
+    display: inline-block;
+}
+
+.footer__title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--color-accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer__contact-list {
+    list-style: none;
+}
+
+.footer__contact-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer__contact-list a {
+    color: var(--color-text-alt);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__contact-list a:hover {
+    color: var(--color-accent);
+}
+
+.footer__bottom {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 1.5rem 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--color-text-alt);
+    margin-bottom: 0.5rem;
+}
+
+.footer__credits {
+    font-size: 0.8rem;
+    color: var(--color-text-alt);
+}
+
+.footer__credits .fa-heart {
+    color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer__bottom {
+        margin-top: 2rem;
+    }
+}

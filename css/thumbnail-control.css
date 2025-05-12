@@ -1,0 +1,82 @@
+/* Estilos para controlar el tamaño de las imágenes y miniaturas */
+
+/* Variables para el sistema de matriz flexible */
+:root {
+    --thumbnail-size: 300px;       /* Tamaño base de las miniaturas */
+    --thumbnail-gap: 2rem;         /* Espacio entre miniaturas */
+    --thumbnail-max-width: 100%;   /* Ancho máximo de cada miniatura */
+    --collection-max-width: 1200px; /* Ancho máximo del contenedor de colección */
+}
+
+/* Control de tamaño para todas las imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos específicos para las miniaturas en colecciones */
+.sticker-item {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Mantiene relación de aspecto cuadrada */
+    overflow: hidden;
+    border-radius: var(--border-radius-sm, 4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: var(--thumbnail-max-width);
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.sticker-item a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.sticker-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
+    transition: transform 0.3s ease;
+}
+
+/* Mejoras para el visor de imágenes */
+.image-viewer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.image-viewer__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --thumbnail-size: 150px;
+        --thumbnail-gap: 1rem;
+    }
+    
+    .stickers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(var(--thumbnail-size), 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --thumbnail-size: 120px;
+        --thumbnail-gap: 0.75rem;
+    }
+}

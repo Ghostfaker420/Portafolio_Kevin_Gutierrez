@@ -1,41 +1,122 @@
-/* CV Section */
-.cv-section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-top: 2rem;
+/* Estilos para la sección de Curriculum */
+.curriculum {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
 }
 
-.cv-sidebar {
-    background: rgba(18, 18, 18, 0.7);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    position: sticky;
-    top: 100px;
+.curriculum-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background: var(--color-card-bg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-normal);
 }
 
-.cv-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 1.5rem;
-    display: block;
-    border: 3px solid var(--primary-color);
+.experience-section,
+.education-section {
+    margin-bottom: var(--spacing-xl);
 }
 
-.cv-contact-info {
-    margin-bottom: 2rem;
+.experience-section h3,
+.education-section h3 {
+    color: var(--color-primary);
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.cv-contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+.experience-item,
+.education-item {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--color-accent);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    transition: transform var(--transition-normal);
+}
+
+.experience-item:hover,
+.education-item:hover {
+    transform: translateX(10px);
+}
+
+.experience-title,
+.education-item h4 {
+    color: var(--color-text);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.experience-company,
+.education-item p:first-of-type {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.experience-period,
+.education-item p:last-of-type {
+    color: var(--color-text-alt);
     font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
 }
 
-.cv-contact-item i {
-    margin-right: 10px;
-    color
+.experience-duties {
+    list-style: none;
+    padding-left: var(--spacing-md);
+}
+
+.experience-duties li {
+    position: relative;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.experience-duties li::before {
+    content: '▹';
+    position: absolute;
+    left: -20px;
+    color: var(--color-accent);
+}
+
+/* Efectos y animaciones */
+.curriculum .rotate-in {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transition: all 0.5s ease-out;
+}
+
+.curriculum.reveal .rotate-in {
+    opacity: 1;
+    transform: rotateX(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .curriculum-content {
+        padding: var(--spacing-md);
+    }
+
+    .experience-title,
+    .education-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .experience-company,
+    .education-item p:first-of-type {
+        font-size: 1rem;
+    }
+
+    .experience-duties {
+        padding-left: var(--spacing-sm);
+    }
+
+    .experience-item:hover,
+    .education-item:hover {
+        transform: none;
+    }
+}

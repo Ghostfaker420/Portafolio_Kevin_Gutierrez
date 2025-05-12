@@ -1,0 +1,168 @@
+/* Estilos para la galería de proyectos y stickers */
+
+/* Contenedor principal de la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Contenedor de la galería en la página específica */
+.contenedor-galeria {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem 2rem;
+}
+
+/* Información de la colección */
+.info-coleccion {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.galeria-titulo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.collection-description {
+    font-size: 1.2rem;
+    color: var(--color-text-alt);
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.collection-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--color-text-alt);
+    font-size: 0.9rem;
+}
+
+/* Items de la galería (stickers) */
+.contenedor-imagen {
+    position: relative;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-normal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor-imagen:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.sticker-item {
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-card-bg);
+}
+
+.sticker-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sticker-item:hover .sticker-image {
+    transform: scale(1.05);
+}
+
+.sticker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sticker-item:hover .sticker-overlay {
+    opacity: 1;
+}
+
+.sticker-view {
+    color: white;
+    font-size: 1.5rem;
+    background: var(--color-accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.sticker-item:hover .sticker-view {
+    transform: scale(1);
+}
+
+/* Botón de volver */
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn--outline {
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.btn--outline:hover {
+    background: var(--color-accent);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .galeria-titulo {
+        font-size: 2.5rem;
+    }
+    
+    .contenedor-galeria {
+        padding: 5rem 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .galeria-titulo {
+        font-size: 2rem;
+    }
+    
+    .collection-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
