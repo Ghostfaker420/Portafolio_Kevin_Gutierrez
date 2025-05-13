@@ -30,9 +30,41 @@
 
 .collections__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--collection-item-size), 1fr));
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 200px;
     gap: var(--collection-gap);
     margin-top: var(--spacing-lg);
+}
+
+/* Patrón de diseño más dinámico */
+.collection-item:nth-child(12n+1) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.collection-item:nth-child(12n+2) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.collection-item:nth-child(12n+3) {
+    grid-column: span 5;
+    grid-row: span 1;
+}
+
+.collection-item:nth-child(12n+4) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.collection-item:nth-child(12n+5) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.collection-item:nth-child(12n+6) {
+    grid-column: span 4;
+    grid-row: span 1;
 }
 
 .collection-item {
@@ -50,7 +82,7 @@
 
 .collection-item__image {
     width: 100%;
-    height: var(--collection-item-size);
+    height: 100%;
     object-fit: cover;
     transition: transform var(--transition-normal);
 }
@@ -88,12 +120,52 @@
     color: var(--color-text-alt);
 }
 
+@media (max-width: 1024px) {
+    .collections__grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .collection-item:nth-child(n) {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+    
+    .collection-item:nth-child(4n+1) {
+        grid-column: span 5;
+        grid-row: span 2;
+    }
+    
+    .collection-item:nth-child(4n+2) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+}
+
 @media (max-width: 768px) {
-    :root {
-        --collection-item-size: 250px;
+    .collections__grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 180px;
     }
 
+    .collection-item:nth-child(n) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+    
+    .collection-item:nth-child(3n+1) {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 480px) {
     .collections__grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+
+    .collection-item:nth-child(n) {
+        grid-column: span 1;
+        grid-row: span 1;
     }
 }
