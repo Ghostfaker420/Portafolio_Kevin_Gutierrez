@@ -1,180 +1,99 @@
-/* Estilos para la página de colecciones */
+:root {
+    --collection-gap: 1.5rem;
+    --collection-item-size: 300px;
+}
 
-/* Contenedor principal */
-.collection-container {
-    max-width: var(--collection-max-width, 1200px);
+.collections {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
+}
+
+.collections__container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 6rem 2rem 2rem;
-    text-align: center;
+    padding: 0 var(--spacing-md);
 }
 
-/* Título y descripción */
-.collection-page-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
+.collection-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.collection-section__title {
+    font-size: 1.8rem;
     color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.collection-page-description {
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--color-text-alt);
-    max-width: 800px;
-    margin: 0 auto 3rem;
-}
-
-/* Grid de colección */
-.collection-grid {
+.collections__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--thumbnail-size, 300px), 1fr));
-    gap: var(--thumbnail-gap, 2rem);
-    margin: 2rem auto;
-    max-width: var(--collection-max-width, 1200px);
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(var(--collection-item-size), 1fr));
+    gap: var(--collection-gap);
+    margin-top: var(--spacing-lg);
 }
 
-/* Items de la colección */
 .collection-item {
     position: relative;
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-normal);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    aspect-ratio: 1 / 1;
     background-color: var(--color-card-bg);
-    width: 100%;
-    max-width: var(--thumbnail-max-width, 100%);
+    transition: transform var(--transition-normal);
+    cursor: pointer;
 }
 
 .collection-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-large);
 }
 
-.collection-image {
+.collection-item__image {
     width: 100%;
-    height: 100%;
+    height: var(--collection-item-size);
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform var(--transition-normal);
 }
 
-.collection-item:hover .collection-image {
+.collection-item:hover .collection-item__image {
     transform: scale(1.05);
 }
 
-.collection-overlay {
+.collection-item__overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    right: 0;
+    padding: var(--spacing-md);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--color-text);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
 }
 
-.collection-item:hover .collection-overlay {
+.collection-item:hover .collection-item__overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.collection-view {
-    color: white;
-    font-size: 1.5rem;
-    background: var(--color-accent);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
+.collection-item__title {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
 }
 
-.collection-item:hover .collection-view {
-    transform: scale(1);
+.collection-item__description {
+    font-size: 0.9rem;
+    color: var(--color-text-alt);
 }
 
-/* Botón de volver */
-.collection-back {
-    text-align: center;
-    margin: 3rem 0;
-}
-
-/* Estilos para la cuadrícula de stickers */
-.stickers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-/* Control de tamaño para las miniaturas */
-.sticker-item {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: var(--border-radius-sm);
-    background-color: var(--color-card-bg);
-    box-shadow: var(--shadow-normal);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sticker-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-large);
-}
-
-.sticker-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.sticker-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.sticker-item:hover .sticker-image {
-    transform: scale(1.05);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    .collection-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
+    :root {
+        --collection-item-size: 250px;
     }
-    
-    .stickers-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-    
-    .collection-page-title {
-        font-size: 2.5rem;
-    }
-    
-    .collection-container {
-        padding: 5rem 1rem 2rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .collection-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .collection-page-title {
-        font-size: 2rem;
+    .collections__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
