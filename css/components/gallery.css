@@ -80,9 +80,11 @@
 .sticker-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
     display: block;
+    max-height: 500px;
+    margin: 0 auto;
 }
 
 .sticker-item:hover .sticker-image {
