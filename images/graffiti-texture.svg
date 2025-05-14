@@ -38,24 +38,8 @@
           stroke="#3498db" stroke-width="12" fill="none" opacity="0.7" />
   </g>
   
-  <!-- Textos estilo graffiti -->
-  <g transform="translate(150, 300)" filter="url(#spray-effect)">
-    <text font-family="Arial" font-weight="bold" font-size="80" fill="#e85e27">
-      URBAN
-    </text>
-    <text font-family="Arial" font-weight="bold" font-size="80" fill="#e85e27" x="5" y="5" opacity="0.3">
-      URBAN
-    </text>
-  </g>
-  
-  <g transform="translate(200, 400)" filter="url(#spray-effect)">
-    <text font-family="Arial" font-weight="bold" font-size="60" fill="#3498db">
-      STYLE
-    </text>
-    <text font-family="Arial" font-weight="bold" font-size="60" fill="#3498db" x="3" y="3" opacity="0.3">
-      STYLE
-    </text>
-  </g>
+  <!-- Elementos de fondo -->
+
   
   <!-- Manchas y salpicaduras -->
   <circle cx="100" cy="200" r="30" fill="#e85e27" opacity="0.6" filter="url(#spray-effect)" />
