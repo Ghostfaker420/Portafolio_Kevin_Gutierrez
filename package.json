@@ -1,0 +1,22 @@
+{
+  "name": "portafolio-optimizacion",
+  "version": "1.0.0",
+  "description": "Herramientas para optimizar imágenes del portafolio",
+  "main": "index.js",
+  "scripts": {
+    "optimize": "node optimize-images.js",
+    "update-refs": "node update-image-references.js",
+    "full-optimize": "npm run optimize && npm run update-refs",
+    "webp-convert": "node webp-convert.js",
+    "analyze": "node analyze-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "cheerio": "^1.0.0-rc.12",
+    "fs-extra": "^11.2.0",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
+    "image-size": "^1.0.2"
+  },
+  "private": true
+}
