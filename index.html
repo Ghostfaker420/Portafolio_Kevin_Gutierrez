@@ -21,25 +21,10 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- Fuentes con display swap para mejor rendimiento -->
-    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Dirt&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Big+Shoulders+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Componentes -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/about.css">
-    <link rel="stylesheet" href="css/components/gallery.css">
-    <link rel="stylesheet" href="css/components/collections.css">
-    <link rel="stylesheet" href="css/components/contact.css">
-    <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/image-viewer.css">
-    
-    <!-- Utilidades -->
-    <link rel="stylesheet" href="css/typography-enhancement.css">
-    <link rel="stylesheet" href="css/transparent-images.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/thumbnail-control.css">
-    <link rel="stylesheet" href="css/fixes.css">
+    <!-- CSS Combinado para mejor rendimiento -->
+    <link rel="stylesheet" href="css/combined.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
@@ -47,8 +32,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/LOGO.svg" type="image/x-icon">
     
-    <!-- Script de optimización de imágenes -->
-    <script src="js/image-optimizer.js" defer></script>
+    <!-- Script de optimización de rendimiento -->
+    <script src="js/performance-optimizer.js" defer></script>
 </head>
 <body>
     <!-- Skip link para accesibilidad -->
@@ -73,10 +58,9 @@
             </button>
             <div class="navbar__nav" id="nav-links">
                 <a href="#inicio" class="navbar__link active" aria-current="page">Inicio</a>
-                <a href="#sobre-mi" class="navbar__link">Sobre Mí</a>
-                <a href="#proyectos" class="navbar__link">Proyectos</a>
-                <a href="#curriculum" class="navbar__link">Curriculum</a>
-                <a href="#experiencias" class="navbar__link">Experiencias</a>
+                <a href="#letras" class="navbar__link">Letras</a>
+                <a href="#ilustraciones" class="navbar__link">Ilustraciones</a>
+                <a href="#animaciones" class="navbar__link">Animaciones</a>
                 <a href="#contacto" class="navbar__link">Contacto</a>
             </div>
         </nav>
@@ -111,40 +95,27 @@
             <h2 class="section-title" id="letras-title">Letras - Diseños Tipográficos</h2>
             <div class="collections__grid">
                 <div class="collection-item wide">
-                    <img src="images/Letras/IMG_2316.png" alt="Diseño tipográfico 1" class="collection-item__image" loading="lazy" decoding="async">
+                    <img data-src="images/Letras/IMG_2316.png" alt="Diseño tipográfico 1" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Exploración tipográfica urbana</p>
                     </div>
                 </div>
                 <div class="collection-item">
-                    <img src="images/Letras/IMG_2400.JPG" alt="Diseño tipográfico 2" class="collection-item__image">
+                    <img data-src="images/Letras/IMG_2400.JPG" alt="Diseño tipográfico 2" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Diseño de caracteres personalizados</p>
                     </div>
                 </div>
                 <div class="collection-item">
-                    <img src="images/Letras/IMG_2403.PNG" alt="Diseño tipográfico 3" class="collection-item__image">
+                    <img data-src="images/Letras/IMG_2403.PNG" alt="Diseño tipográfico 3" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Composición tipográfica</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2405.PNG" alt="Diseño tipográfico 4" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Estilo urbano contemporáneo</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2406.JPG" alt="Diseño tipográfico 5" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Diseño tipográfico moderno</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Letras/IMG_2407.PNG" alt="Diseño tipográfico 6" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -173,13 +144,7 @@
                         <p class="collection-item__description">Tipografía urbana</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2414.PNG" alt="Diseño tipográfico 10" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Diseño contemporáneo</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Letras/IMG_2416.PNG" alt="Diseño tipográfico 11" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -194,13 +159,7 @@
                         <p class="collection-item__description">Tipografía moderna</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2418.PNG" alt="Diseño tipográfico 13" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Diseño innovador</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Letras/IMG_2419.PNG" alt="Diseño tipográfico 14" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -208,13 +167,7 @@
                         <p class="collection-item__description">Estilo artístico</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2420.PNG" alt="Diseño tipográfico 15" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Composición creativa</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Letras/IMG_2421.PNG" alt="Diseño tipográfico 16" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -229,20 +182,7 @@
                         <p class="collection-item__description">Arte tipográfico moderno</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2428.PNG" alt="Diseño tipográfico 18" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Diseño urbano</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2429.PNG" alt="Diseño tipográfico 19" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Tipografía experimental</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Letras/IMG_2430.PNG" alt="Diseño tipográfico 20" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -250,13 +190,7 @@
                         <p class="collection-item__description">Diseño contemporáneo</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2431.PNG" alt="Diseño tipográfico 21" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Lettering</h3>
-                        <p class="collection-item__description">Arte tipográfico urbano</p>
-                    </div>
-                </div>
+
             </div>
     </section>
 
@@ -266,21 +200,21 @@
             <h2 class="section-title" id="ilustraciones-title">Ilustraciones</h2>
             <div class="collections__grid">
                 <div class="collection-item large">
-                    <img src="images/Ilustraciones/IMG_2294.jpeg" alt="Ilustración 1" class="collection-item__image">
+                    <img data-src="images/Ilustraciones/IMG_2294.jpeg" alt="Ilustración 1" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Exploración artística digital</p>
                     </div>
                 </div>
                 <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2313.jpeg" alt="Ilustración 2" class="collection-item__image">
+                    <img data-src="images/Ilustraciones/IMG_2313.jpeg" alt="Ilustración 2" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Composición creativa</p>
                     </div>
                 </div>
                 <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2314.jpeg" alt="Ilustración 3" class="collection-item__image">
+                    <img data-src="images/Ilustraciones/IMG_2314.jpeg" alt="Ilustración 3" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Arte conceptual</p>
@@ -300,13 +234,7 @@
                         <p class="collection-item__description">Arte experimental</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2397.JPG" alt="Ilustración 6" class="collection-item__image">
-                    <div class="collection-item__overlay">
-                        <h3 class="collection-item__title">Ilustración Digital</h3>
-                        <p class="collection-item__description">Expresión visual</p>
-                    </div>
-                </div>
+
                 <div class="collection-item">
                     <img src="images/Ilustraciones/IMG_2413.PNG" alt="Ilustración 7" class="collection-item__image">
                     <div class="collection-item__overlay">
@@ -393,6 +321,30 @@
                 </div> -->
             </div>
         </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animaciones Section -->
+    <section class="collections" id="animaciones" aria-labelledby="animaciones-title">
+        <div class="collections__container">
+            <h2 class="section-title" id="animaciones-title">Animaciones</h2>
+            <p class="section-subtitle">Explora mis trabajos animados</p>
+            <div class="collections__grid">
+                <div class="collection-item wide">
+                    <img data-src="images/Animaciones/IMG_2435.gif" alt="Animación 1" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Animación Digital</h3>
+                        <p class="collection-item__description">Diseño animado creativo</p>
+                    </div>
+                </div>
+                <div class="collection-item wide">
+                    <img data-src="images/Animaciones/IMG_2436.gif" alt="Animación 2" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Animación Digital</h3>
+                        <p class="collection-item__description">Exploración de movimiento</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

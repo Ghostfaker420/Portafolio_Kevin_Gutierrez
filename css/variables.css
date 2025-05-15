@@ -18,7 +18,7 @@
     
     /* Tipografía */
     --font-main: 'Big Shoulders Display', sans-serif;
-    --font-accent: 'Rampart One', cursive;
+    --font-accent: 'Rampart One', cursive; /* Mantenemos esta variable para compatibilidad */
     --font-title: 'Rampart One', cursive;
     
     /* Espaciado */

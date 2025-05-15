@@ -10,9 +10,9 @@
     --color-card-bg: rgba(25, 25, 25, 0.8);
     
     /* Tipografía */
-    --font-main: 'Poppins', sans-serif;
-    --font-title: 'Permanent Marker', cursive;
-    --font-accent: 'Rubik Dirt', cursive;
+    --font-main: 'Big Shoulders Display', sans-serif;
+    --font-title: 'Rampart One', cursive;
+    --font-accent: 'Rampart One', cursive; /* Mantenemos esta variable para compatibilidad */
     
     /* Espaciado */
     --spacing-xs: 0.5rem;
