@@ -316,6 +316,15 @@ a:hover {
     color: var(--color-text-alt);
 }
 
+.subsection-title {
+    font-size: 1.8rem;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .collections__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

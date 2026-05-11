@@ -15,8 +15,7 @@ const imageFolders = [
   'images/Letras',
   'images/Ilustraciones',
   'images/Pokemon',
-  'images/Sticker Tanda 2',
-  'images/Stickers Tanda 1'
+  'images/Stickers'
 ];
 
 // Extensiones de imagen a procesar

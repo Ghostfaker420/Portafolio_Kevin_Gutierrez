@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,29 +23,20 @@
     <!-- Fuentes con display swap para mejor rendimiento -->
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Big+Shoulders+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- CSS Combinado para mejor rendimiento -->
-    <link rel="stylesheet" href="css/combined.css">
+    <!-- CSS Optimizado -->
+    <link rel="stylesheet" href="css/optimized.css">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+    <!-- Font Awesome optimizado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" fetchpriority="low">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/LOGO.svg" type="image/x-icon">
     
-    <!-- Script de optimización de rendimiento -->
-    <script src="js/performance-optimizer.js" defer></script>
 </head>
 <body>
     <!-- Skip link para accesibilidad -->
-    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
-    <!-- Loader de página con estilo urbano -->
-    <div class="page-loader" aria-hidden="true">
-        <div class="loader-content urban-texture">
-            <div class="loader-spinner"></div>
-            <div class="loader-text">Cargando experiencia urbana...</div>
-        </div>
-    </div>
 
     <header role="banner" id="inicio">
         <nav class="navbar" role="navigation" aria-label="Navegación principal">
@@ -53,14 +44,17 @@
                 <img src="images/LOGO.svg" alt="Logo de Diseño Interactivo & Arte Urbano" width="60" height="60">
                 <span class="navbar__logo-text">SUMMONER</span>
             </a>
-            <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links" aria-haspopup="true">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <span class="visually-hidden">Menú</span>
             </button>
             <div class="navbar__nav" id="nav-links">
                 <a href="#inicio" class="navbar__link active" aria-current="page">Inicio</a>
                 <a href="#letras" class="navbar__link">Letras</a>
                 <a href="#ilustraciones" class="navbar__link">Ilustraciones</a>
                 <a href="#animaciones" class="navbar__link">Animaciones</a>
+                <a href="#stickers" class="navbar__link">Stickers</a>
+                <a href="#autorretratos" class="navbar__link">Autorretratos</a>
                 <a href="#contacto" class="navbar__link">Contacto</a>
             </div>
         </nav>
@@ -93,98 +87,98 @@
     <section class="collections" id="letras" aria-labelledby="letras-title">
         <div class="collections__container">
             <h2 class="section-title" id="letras-title">Letras - Diseños Tipográficos</h2>
-            <div class="collections__grid">
-                <div class="collection-item wide">
-                    <img data-src="images/Letras/IMG_2316.png" alt="Diseño tipográfico 1" class="collection-item__image" loading="lazy" decoding="async">
+            <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                <div class="collection-item" role="listitem" wide>
+                    <img data-src="images/Letras/IMG_2316.png" alt="Diseño tipográfico 1" class="collection-item__image" loading="lazy" decoding="async" width="800" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Exploración tipográfica urbana</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img data-src="images/Letras/IMG_2400.JPG" alt="Diseño tipográfico 2" class="collection-item__image" loading="lazy" decoding="async">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2400.JPG" alt="Diseño tipográfico 2" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Diseño de caracteres personalizados</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img data-src="images/Letras/IMG_2403.PNG" alt="Diseño tipográfico 3" class="collection-item__image" loading="lazy" decoding="async">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2403.PNG" alt="Diseño tipográfico 3" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Composición tipográfica</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2407.PNG" alt="Diseño tipográfico 6" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2407.PNG" alt="Diseño tipográfico 6" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Arte tipográfico</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2408.PNG" alt="Diseño tipográfico 7" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2408.PNG" alt="Diseño tipográfico 7" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Tipografía creativa</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2409.PNG" alt="Diseño tipográfico 8" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2409.PNG" alt="Diseño tipográfico 8 - Estilo experimental con trazos dinámicos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Diseño experimental</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2410.PNG" alt="Diseño tipográfico 9" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2410.PNG" alt="Diseño tipográfico 9 - Composición urbana con elementos geométricos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Tipografía urbana</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2416.PNG" alt="Diseño tipográfico 11" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2416.PNG" alt="Diseño tipográfico 11 - Arte caligráfico con estilo contemporáneo" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Arte caligráfico</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2417.PNG" alt="Diseño tipográfico 12" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2417.PNG" alt="Diseño tipográfico 12 - Tipografía moderna con elementos decorativos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Tipografía moderna</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2419.PNG" alt="Diseño tipográfico 14" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2419.PNG" alt="Diseño tipográfico 14 - Estilo artístico con elementos caligráficos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Estilo artístico</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2421.PNG" alt="Diseño tipográfico 16" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2421.PNG" alt="Diseño tipográfico 16 - Diseño expresivo con trazos fluidos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Diseño expresivo</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2422.PNG" alt="Diseño tipográfico 17" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2422.PNG" alt="Diseño tipográfico 17 - Arte tipográfico moderno con elementos abstractos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Arte tipográfico moderno</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Letras/IMG_2430.PNG" alt="Diseño tipográfico 20" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Letras/IMG_2430.PNG" alt="Diseño tipográfico 20 - Diseño contemporáneo con elementos geométricos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Lettering</h3>
                         <p class="collection-item__description">Diseño contemporáneo</p>
@@ -198,66 +192,66 @@
     <section class="collections" id="ilustraciones" aria-labelledby="ilustraciones-title">
         <div class="collections__container">
             <h2 class="section-title" id="ilustraciones-title">Ilustraciones</h2>
-            <div class="collections__grid">
-                <div class="collection-item large">
+            <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                <div class="collection-item large" role="listitem">
                     <img data-src="images/Ilustraciones/IMG_2294.jpeg" alt="Ilustración 1" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Exploración artística digital</p>
                     </div>
                 </div>
-                <div class="collection-item">
+                <div class="collection-item" role="listitem">
                     <img data-src="images/Ilustraciones/IMG_2313.jpeg" alt="Ilustración 2" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Composición creativa</p>
                     </div>
                 </div>
-                <div class="collection-item">
+                <div class="collection-item" role="listitem">
                     <img data-src="images/Ilustraciones/IMG_2314.jpeg" alt="Ilustración 3" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Arte conceptual</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2388.JPG" alt="Ilustración 4" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2388.JPG" alt="Ilustración 4 - Composición digital moderna con elementos geométricos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Diseño contemporáneo</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2391.JPG" alt="Ilustración 5" class="collection-item__image">
-                    <div class="collection-item__overlay">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2391.JPG" alt="Ilustración 5 - Arte digital experimental con texturas abstractas" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collectiodeepseek/deepseek-r1-0528-qwen3-8bn-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Arte experimental</p>
                     </div>
                 </div>
 
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2413.PNG" alt="Ilustración 7" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2413.PNG" alt="Ilustración 7 - Diseño urbano con elementos de street art" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Diseño urbano</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2426.PNG" alt="Ilustración 8" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2426.PNG" alt="Ilustración 8 - Arte urbano digital con influencias contemporáneas" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Arte urbano digital</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2427.PNG" alt="Ilustración 9" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2427.PNG" alt="Ilustración 9 - Diseño contemporáneo con elementos minimalistas" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Diseño contemporáneo</p>
                     </div>
                 </div>
-                <div class="collection-item">
-                    <img src="images/Ilustraciones/IMG_2433.PNG" alt="Ilustración 10" class="collection-item__image">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Ilustraciones/IMG_2433.PNG" alt="Ilustración 10 - Arte digital moderno con técnicas mixtas" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Ilustración Digital</h3>
                         <p class="collection-item__description">Arte digital moderno</p>
@@ -330,19 +324,121 @@
         <div class="collections__container">
             <h2 class="section-title" id="animaciones-title">Animaciones</h2>
             <p class="section-subtitle">Explora mis trabajos animados</p>
-            <div class="collections__grid">
-                <div class="collection-item wide">
+            <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                <div class="collection-item wide" role="listitem">
                     <img data-src="images/Animaciones/IMG_2435.gif" alt="Animación 1" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Animación Digital</h3>
                         <p class="collection-item__description">Diseño animado creativo</p>
                     </div>
                 </div>
-                <div class="collection-item wide">
+                <div class="collection-item wide" role="listitem">
                     <img data-src="images/Animaciones/IMG_2436.gif" alt="Animación 2" class="collection-item__image" loading="lazy" decoding="async">
                     <div class="collection-item__overlay">
                         <h3 class="collection-item__title">Animación Digital</h3>
                         <p class="collection-item__description">Exploración de movimiento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stickers Section -->
+    <section class="collections" id="stickers" aria-labelledby="stickers-title">
+        <div class="collections__container">
+            <h2 class="section-title" id="stickers-title">Stickers</h2>
+            <p class="section-subtitle">Colección de diseños para stickers</p>
+            
+            <!-- Tanda 1 -->
+            <h3 class="subsection-title">Tanda 1</h3>
+            <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_01.png" alt="Sticker Tanda 1 - 01" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_02.png" alt="Sticker Tanda 1 - 02" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_03.png" alt="Sticker Tanda 1 - 03" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_04.png" alt="Sticker Tanda 1 - 04" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_05.png" alt="Sticker Tanda 1 - 05" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers Tanda 1/sticker_t1_06.png" alt="Sticker Tanda 1 - 06" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 1</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tanda 2 -->
+            <h3 class="subsection-title">Tanda 2</h3>
+            <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_01.png" alt="Sticker Tanda 2 - 01" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_02.png" alt="Sticker Tanda 2 - 02" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_03.png" alt="Sticker Tanda 2 - 03" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_04.png" alt="Sticker Tanda 2 - 04" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_05.png" alt="Sticker Tanda 2 - 05" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Sticker Tanda 2/sticker_t2_06.png" alt="Sticker Tanda 2 - 06" class="collection-item__image" loading="lazy" decoding="async">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Sticker</h3>
+                        <p class="collection-item__description">Diseño original Tanda 2</p>
                     </div>
                 </div>
             </div>
@@ -358,49 +454,49 @@
             <!-- Stickers Serie 1 -->
             <div class="collection-section">
                 <h3 class="collection-section__title">Serie 1 - Primera Colección</h3>
-                <div class="collections__grid">
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1723.PNG" alt="Sticker diseño 1" class="collection-item__image">
+                <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1723.PNG" alt="Sticker diseño 1 - Arte urbano con elementos gráficos dinámicos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
                         </div>
                     </div>
                     
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1724.PNG" alt="Sticker diseño 2" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1724.PNG" alt="Sticker diseño 2 - Diseño moderno con patrones geométricos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1725.PNG" alt="Sticker diseño 3" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1725.PNG" alt="Sticker diseño 3 - Composición abstracta con elementos coloridos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1726.PNG" alt="Sticker diseño 4" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1726.PNG" alt="Sticker diseño 4 - Arte digital con estilo minimalista" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1727.PNG" alt="Sticker diseño 5" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1727.PNG" alt="Sticker diseño 5 - Diseño contemporáneo con elementos tipográficos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Stickers Tanda 1/IMG_1728.PNG" alt="Sticker diseño 6" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1728.PNG" alt="Sticker diseño 6 - Arte urbano con influencias del street art" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 1</h3>
                             <p class="collection-item__description">Primera colección de stickers artísticos</p>
@@ -412,49 +508,49 @@
             <!-- Stickers Serie 2 -->
             <div class="collection-section">
                 <h3 class="collection-section__title">Serie 2 - Segunda Colección</h3>
-                <div class="collections__grid">
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1781.png" alt="Sticker serie 2 diseño 1" class="collection-item__image">
+                <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1781.png" alt="Sticker serie 2 diseño 1 - Diseño experimental con texturas digitales" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1782.PNG" alt="Sticker serie 2 diseño 2" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1782.PNG" alt="Sticker serie 2 diseño 2 - Arte digital con elementos abstractos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1783.PNG" alt="Sticker serie 2 diseño 3" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1783.PNG" alt="Sticker serie 2 diseño 3 - Composición moderna con elementos gráficos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
                         </div>
                     </div>
  
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1784.PNG" alt="Sticker serie 2 diseño 4" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1784.PNG" alt="Sticker serie 2 diseño 4 - Diseño urbano con elementos contemporáneos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1786.PNG" alt="Sticker serie 2 diseño 5" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1786.PNG" alt="Sticker serie 2 diseño 5 - Arte digital con elementos de diseño urbano" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
                         </div>
                     </div>
 
-                    <div class="collection-item">
-                        <img src="images/Sticker Tanda 2/IMG_1787.PNG" alt="Sticker serie 2 diseño 6" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Stickers/IMG_1787.PNG" alt="Sticker serie 2 diseño 6 - Composición moderna con influencias del arte callejero" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Stickers - Serie 2</h3>
                             <p class="collection-item__description">Segunda colección de stickers artísticos</p>
@@ -466,30 +562,30 @@
             <!-- Colección Pokémon -->
             <div class="collection-section">
                 <h3 class="collection-section__title">Colección Pokémon - Arte Digital</h3>
-                <div class="collections__grid">
-                    <div class="collection-item">
-                        <img src="images/Pokemon/IMG_2299.JPG" alt="Arte Pokémon 1" class="collection-item__image">
+                <div class="collections__grid" role="list" aria-label="Galería de diseños tipográficos">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Pokemon/IMG_2299.JPG" alt="Arte Pokémon 1 - Interpretación artística de Pikachu en estilo digital" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Pokémon Art</h3>
                             <p class="collection-item__description">Interpretación artística de criaturas Pokémon</p>
                         </div>
                     </div>
-                    <div class="collection-item">
-                        <img src="images/Pokemon/IMG_2392.JPG" alt="Arte Pokémon 2" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Pokemon/IMG_2392.JPG" alt="Arte Pokémon 2 - Diseño digital de Charizard con efectos especiales" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Pokémon Art</h3>
                             <p class="collection-item__description">Diseño digital de personajes Pokémon</p>
                         </div>
                     </div>
-                    <div class="collection-item">
-                        <img src="images/Pokemon/IMG_2402.JPG" alt="Arte Pokémon 3" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Pokemon/IMG_2402.JPG" alt="Arte Pokémon 3 - Ilustración de Mewtwo en estilo contemporáneo" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Pokémon Art</h3>
                             <p class="collection-item__description">Ilustración de criaturas Pokémon</p>
                         </div>
                     </div>
-                    <div class="collection-item">
-                        <img src="images/Pokemon/IMG_2404.JPG" alt="Arte Pokémon 4" class="collection-item__image">
+                    <div class="collection-item" role="listitem">
+                        <img data-src="images/Pokemon/IMG_2404.JPG" alt="Arte Pokémon 4 - Fanart de Gengar con efectos de iluminación" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
                         <div class="collection-item__overlay">
                             <h3 class="collection-item__title">Pokémon Art</h3>
                             <p class="collection-item__description">Fanart de universo Pokémon</p>
@@ -498,6 +594,89 @@
                 </div>
             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autorretratos Section -->
+    <section class="collections" id="autorretratos" aria-labelledby="autorretratos-title">
+        <div class="collections__container">
+            <h2 class="section-title" id="autorretratos-title">Autorretratos</h2>
+            <p class="section-subtitle">Expresiones artísticas personales</p>
+            <div class="collections__grid" role="list" aria-label="Galería de autorretratos">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Autorretratos/IMG_2393.JPG" alt="Autorretrato 1 - Expresión artística personal" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Autorretrato Digital</h3>
+                        <p class="collection-item__description">Exploración de identidad artística</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Autorretratos/IMG_2394.JPG" alt="Autorretrato 2 - Interpretación creativa del ser" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Autorretrato Digital</h3>
+                        <p class="collection-item__description">Estudio de expresión personal</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Autorretratos/IMG_2395.JPG" alt="Autorretrato 3 - Representación abstracta del artista" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Autorretrato Digital</h3>
+                        <p class="collection-item__description">Arte introspectivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stickers Section -->
+    <section class="collections" id="stickers" aria-labelledby="stickers-title">
+        <div class="collections__container">
+            <h2 class="section-title" id="stickers-title">Stickers</h2>
+            <p class="section-subtitle">Colección de diseños adhesivos</p>
+            <div class="collections__grid" role="list" aria-label="Galería de stickers">
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1723.PNG" alt="Sticker diseño 1 - Arte urbano con elementos gráficos dinámicos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1724.PNG" alt="Sticker diseño 2 - Diseño moderno con patrones geométricos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1725.PNG" alt="Sticker diseño 3 - Composición abstracta con elementos coloridos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1726.PNG" alt="Sticker diseño 4 - Arte digital con estilo minimalista" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1727.PNG" alt="Sticker diseño 5 - Diseño contemporáneo con elementos tipográficos" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
+                    </div>
+                </div>
+                <div class="collection-item" role="listitem">
+                    <img data-src="images/Stickers/IMG_1728.PNG" alt="Sticker diseño 6 - Arte urbano con influencias del street art" class="collection-item__image" loading="lazy" decoding="async" width="600" height="600" fetchpriority="low">
+                    <div class="collection-item__overlay">
+                        <h3 class="collection-item__title">Stickers - Serie 1</h3>
+                        <p class="collection-item__description">Primera colección de stickers artísticos</p>
                     </div>
                 </div>
             </div>
@@ -536,5 +715,16 @@
             <p class="footer__credits">Diseñado con <i class="fas fa-heart" aria-hidden="true"></i> por SUMMONER</p>
         </div>
     </footer>
+    
+        <!-- Loader de página con estilo urbano -->
+    <div class="page-loader" aria-hidden="true" role="progressbar" aria-label="Cargando página">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Cargando experiencia urbana...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/performance-optimizer.js"></script>
 </body>
 </html>

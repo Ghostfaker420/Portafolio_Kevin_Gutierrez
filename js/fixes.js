@@ -5,25 +5,71 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Aplicando correcciones de compatibilidad...');
+    console.log('Iniciando correcciones de compatibilidad y rendimiento...');
     
-    // 1. Resolver conflicto entre gallery.js e interactive.js
-    resolveScriptConflicts();
+    // Mostrar loader mientras se aplican las correcciones
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        loader.style.display = 'flex';
+        loader.style.opacity = '1';
+    }
     
-    // 2. Corregir problemas con el visor de imágenes
-    fixImageViewer();
-    
-    // 3. Optimizar carga de recursos
-    optimizeResourceLoading();
-    
-    // 4. Corregir problemas con el visor 360°
-    fixPanoramaViewer();
-    
-    // 5. Corregir problemas de CSS duplicados
-    fixCSSConflicts();
-    
-    console.log('Correcciones aplicadas correctamente');
+    // Aplicar correcciones de forma secuencial
+    Promise.all([
+        // 1. Resolver conflictos entre scripts
+        new Promise(resolve => {
+            resolveScriptConflicts();
+            resolve();
+        }),
+        
+        // 2. Corregir visor de imágenes
+        new Promise(resolve => {
+            fixImageViewer();
+            resolve();
+        }),
+        
+        // 3. Optimizar carga de recursos
+        new Promise(resolve => {
+            optimizeResourceLoading();
+            resolve();
+        }),
+        
+        // 4. Corregir visor 360°
+        new Promise(resolve => {
+            fixPanoramaViewer();
+            resolve();
+        }),
+        
+        // 5. Corregir CSS
+        new Promise(resolve => {
+            fixCSSConflicts();
+            resolve();
+        })
+    ])
+    .then(() => {
+        console.log('Todas las correcciones aplicadas correctamente');
+        // Ocultar loader
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    })
+    .catch(error => {
+        console.error('Error al aplicar correcciones:', error);
+        // Mostrar mensaje de error al usuario
+        if (loader) {
+            loader.innerHTML = `
+                <div class="loader-content error">
+                    <p>Error al cargar el sitio. Por favor, recarga la página.</p>
+                    <button onclick="location.reload()">Recargar</button>
+                </div>
+            `;
+        }
+    });
 });
+
 
 /**
  * Resuelve conflictos entre los diferentes archivos JavaScript

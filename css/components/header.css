@@ -1,5 +1,14 @@
-/* Estilos para el encabezado y navegación */
+/* Variables específicas del componente */
+:root {
+    --header-height: 100vh;
+    --navbar-height: 70px;
+    --navbar-bg: rgba(10, 10, 10, 0.95);
+    --navbar-blur: 10px;
+    --logo-size: 40px;
+    --mobile-breakpoint: 768px;
+}
 
+/* Componente Header */
 .header {
     position: relative;
     width: 100%;
@@ -25,18 +34,21 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Componente Navbar */
+/* Componente Navbar */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--navbar-height);
     padding: 1rem 2rem;
-    background: rgba(10, 10, 10, 0.95);
+    background: var(--navbar-bg);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--navbar-blur));
 }
 
 .navbar__logo {
@@ -46,8 +58,9 @@
 }
 
 .navbar__logo img {
-    width: 40px;
+    width: var(--logo-size);
     height: auto;
+    object-fit: contain;
 }
 
 .navbar__logo-text {
@@ -81,22 +94,24 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* Estilos responsivos */
+@media (max-width: var(--mobile-breakpoint)) {
     .mobile-menu-btn {
         display: block;
     }
 
     .navbar__nav {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-height);
         left: 0;
         width: 100%;
-        background: rgba(10, 10, 10, 0.95);
+        background: var(--navbar-bg);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
         transform: translateY(-100%);
         transition: transform var(--transition-normal);
+        backdrop-filter: blur(var(--navbar-blur));
     }
 
     .navbar__nav.active {

@@ -81,8 +81,7 @@ node optimize-images.js
    - images/Letras
    - images/Ilustraciones
    - images/Pokemon
-   - images/Sticker Tanda 2
-   - images/Stickers Tanda 1
+   - images/Stickers
 
 3. Para cada imagen, creará una versión optimizada con el sufijo `-optimized`
    - Ejemplo: `IMG_2316.png` → `IMG_2316-optimized.png`
