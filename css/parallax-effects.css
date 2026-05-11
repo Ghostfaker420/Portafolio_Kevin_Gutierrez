@@ -1,0 +1,311 @@
+/* Efectos de parallax y animaciones avanzadas para el portafolio */
+
+/* Efecto de parallax para el hero */
+.parallax-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.parallax-layer-1 {
+    transform: translateZ(-100px) scale(1.5);
+    z-index: -3;
+}
+
+.parallax-layer-2 {
+    transform: translateZ(-50px) scale(1.25);
+    z-index: -2;
+}
+
+.parallax-layer-3 {
+    transform: translateZ(-25px) scale(1.125);
+    z-index: -1;
+}
+
+/* Animaciones para elementos interactivos */
+@keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+    from { transform: rotate(-10deg) scale(0.8); opacity: 0; }
+    to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px rgba(232, 94, 39, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(232, 94, 39, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(232, 94, 39, 0.5); }
+}
+
+/* Aplicación de animaciones */
+.float-element {
+    animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.rotate-in {
+    animation: rotateIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.glow-effect {
+    animation: glowPulse 3s infinite;
+}
+
+/* Efecto de mouse parallax para elementos */
+.mouse-parallax {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Efecto de desplazamiento para imágenes */
+.scroll-image-effect {
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-image-effect img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-image-effect:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Efecto de desenfoque para fondos */
+.blur-bg {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Efecto de desplazamiento para tarjetas */
+.tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.tilt-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.tilt-card:hover .tilt-card-inner {
+    transform: translateZ(20px);
+}
+
+/* Efecto de desplazamiento para texto */
+.split-text-animation span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.split-text-animation.animate span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto de cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(232, 94, 39, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(232, 94, 39, 0.2);
+}
+
+/* Efecto de desplazamiento para secciones */
+.scroll-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto de desplazamiento para elementos en cascada */
+.cascade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cascade-container.animate .cascade-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cascade-container.animate .cascade-item:nth-child(1) { transition-delay: 0.1s; }
+.cascade-container.animate .cascade-item:nth-child(2) { transition-delay: 0.2s; }
+.cascade-container.animate .cascade-item:nth-child(3) { transition-delay: 0.3s; }
+.cascade-container.animate .cascade-item:nth-child(4) { transition-delay: 0.4s; }
+.cascade-container.animate .cascade-item:nth-child(5) { transition-delay: 0.5s; }
+.cascade-container.animate .cascade-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Efecto de desplazamiento para botones */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de desplazamiento para imágenes de fondo */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Efecto de desplazamiento para texto con gradiente */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.gradient-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: blur(8px);
+    opacity: 0.5;
+}
+
+/* Efecto de desplazamiento para bordes */
+.border-gradient {
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.border-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Efecto de desplazamiento para imágenes con filtro */
+.filter-image {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.filter-image:hover {
+    filter: grayscale(0%);
+}
+
+/* Efecto de desplazamiento para texto con sombra */
+.text-shadow-effect {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: text-shadow 0.3s ease;
+}
+
+.text-shadow-effect:hover {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de desplazamiento para elementos con zoom */
+.zoom-effect {
+    overflow: hidden;
+}
+
+.zoom-effect img {
+    transition: transform 0.5s ease;
+}
+
+.zoom-effect:hover img {
+    transform: scale(1.2);
+}
+
+/* Efecto de desplazamiento para elementos con rotación */
+.rotate-effect {
+    transition: transform 0.5s ease;
+}
+
+.rotate-effect:hover {
+    transform: rotate(5deg);
+}
+
+/* Efecto de desplazamiento para elementos con skew */
+.skew-effect {
+    transition: transform 0.5s ease;
+}
+
+.skew-effect:hover {
+    transform: skew(-5deg, 0);
+}
+
+/* Efecto de desplazamiento para elementos con flip */
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
