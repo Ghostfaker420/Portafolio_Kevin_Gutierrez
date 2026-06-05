@@ -169,7 +169,6 @@
     <section class="viewer360 section" id="viewer360">
         <div class="container">
             <h2 class="section-title reveal-up">Visor <span class="accent">360°</span></h2>
-            <p class="section-sub reveal-up">Arrastra con el mouse o usa las flechas ← → para rotar el objeto</p>
             <div class="viewer-container reveal-up" id="viewerContainer">
                 <div class="viewer-stage" id="viewerStage" tabindex="0" role="application" aria-label="Visor 360° de objeto 3D">
                     <canvas id="viewerCanvas"></canvas>
@@ -188,61 +187,8 @@
                     </button>
                     <span class="viewer-angle" id="viewerAngle">0°</span>
                 </div>
-                <div class="viewer-software">
-                    <span class="viewer-software-label">Software:</span>
-                    <div class="viewer-software-badge">
-                        <img src="assets/images/Blender logo.svg" alt="Blender" width="28" height="28" loading="lazy">
-                        <span class="viewer-software-name">Blender</span>
-                    </div>
-                    <div class="viewer-software-badge">
-                        <img src="assets/images/DaVinci_Resolve_logo.svg" alt="DaVinci Resolve" width="28" height="28" loading="lazy">
-                        <span class="viewer-software-name">DaVinci Resolve</span>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== WAVE DIVIDER ===== -->
-    <div class="wave-divider" style="background: var(--bg-secondary);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" style="fill: var(--bg-primary)"/>
-        </svg>
-    </div>
-
-    <!-- ===== CAROUSEL ===== -->
-    <section class="carousel section" id="carousel">
-        <div class="container">
-            <h2 class="section-title reveal-up">Galería <span class="accent">Creativa</span></h2>
-            <div class="carousel-container reveal-up">
-                <div class="carousel-track" id="carouselTrack"></div>
-                <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-            </div>
-            <div class="carousel-dots" id="carouselDots"></div>
-            <div class="carousel-software">
-                <span class="carousel-software-label">Software:</span>
-                <div class="carousel-software-badge">
-                    <img src="assets/images/photoshop.svg" alt="Photoshop" width="20" height="20" loading="lazy">
-                    <span class="carousel-software-name">Photoshop</span>
-                </div>
-                <div class="carousel-software-badge">
-                    <img src="assets/images/illustrator.svg" alt="Illustrator" width="20" height="20" loading="lazy">
-                    <span class="carousel-software-name">Illustrator</span>
-                </div>
-                <div class="carousel-software-badge">
-                    <img src="assets/images/aftereffects.svg" alt="After Effects" width="20" height="20" loading="lazy">
-                    <span class="carousel-software-name">After Effects</span>
-                </div>
-            </div>
-            <div class="carousel-credits reveal-up">
-                <svg class="carousel-credits-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
-                <span>Créditos: <a href="https://www.instagram.com/antioquiajoven" target="_blank" rel="noopener noreferrer">@Antioquiajoven</a></span>
-            </div>
+            <p class="viewer-instructions">Arrastra con el mouse o toca y desliza en móvil. También puedes usar las flechas ← → del teclado.</p>
         </div>
     </section>
 

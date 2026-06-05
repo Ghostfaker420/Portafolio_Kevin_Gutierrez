@@ -38,43 +38,43 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Identidad de Marca',
             desc: 'Desarrollo completo de branding para una startup tecnológica, incluyendo logotipo, paleta cromática y aplicaciones.',
             tags: ['Branding', 'Illustrator', 'Figma'],
-            software: ['Illustrator', 'Photoshop', 'Figma'],
-            color: '#E85D04'
+            color: '#E85D04',
+            img: null
         },
         {
             title: 'Diseño Editorial',
             desc: 'Maquetación y diseño de una revista cultural con enfoque en tipografía, jerarquía visual y narrativa gráfica.',
             tags: ['InDesign', 'Editorial', 'Tipografía'],
-            software: ['InDesign', 'Illustrator', 'Photoshop'],
-            color: '#E85D04'
+            color: '#9D0208',
+            img: null
         },
         {
             title: 'UX/UI Aplicación',
             desc: 'Diseño de interfaz y experiencia de usuario para una app de productividad, desde wireframes hasta prototipo interactivo.',
             tags: ['UX/UI', 'Figma', 'Prototipado'],
-            software: ['Figma', 'Illustrator'],
-            color: '#E85D04'
+            color: '#E85D04',
+            img: null
         },
         {
             title: 'Modelado 3D',
             desc: 'Modelado y renderizado de producto para catálogo comercial, con texturizado realista e iluminación profesional.',
             tags: ['Blender', '3D', 'Render'],
-            software: ['Blender', 'Substance Painter'],
-            color: '#E85D04'
+            color: '#FFBA08',
+            img: null
         },
         {
             title: 'Muralismo / Arte Urbano',
             desc: 'Dirección de arte y diseño de murales de gran formato con técnicas digitales y modelado 3D escultórico.',
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
-            software: [{ name: 'Nomad Sculpt', img: 'assets/images/nomad_logo.svg' }],
-            color: '#E85D04'
+            color: '#E85D04',
+            img: null
         },
         {
             title: 'Iconografía Vectorial',
             desc: 'Creación de sistemas de iconografía vectorial para plataformas digitales, con enfoque en consistencia visual y escalabilidad.',
             tags: ['Vectorial', 'Iconografía', 'Sistemas de Diseño'],
-            software: ['Illustrator', 'Figma', 'InDesign'],
-            color: '#E85D04'
+            color: '#9D0208',
+            img: null
         }
     ];
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach((p, i) => {
             const card = document.createElement('article');
             card.className = 'project-card reveal-up';
-            card.style.transitionDelay = `${i * 0.08}s`;
+            card.style.transitionDelay = `${i * 0.1}s`;
             card.tabIndex = 0;
             card.role = 'button';
             card.addEventListener('keydown', (e) => {
@@ -95,38 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            function renderSoftwareBadges(software) {
-                if (!software || software.length === 0) return '';
-                return `
-                    <div class="project-card-software">
-                        ${software.map(s => {
-                            if (typeof s === 'string') {
-                                return `<span class="project-card-software-badge">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                                    <span class="project-card-software-name">${s}</span>
-                                </span>`;
-                            }
-                            return `<span class="project-card-software-badge">
-                                <img src="${s.img}" alt="${s.name}" width="14" height="14" loading="lazy">
-                                <span class="project-card-software-name">${s.name}</span>
-                            </span>`;
-                        }).join('')}
-                    </div>
-                `;
-            }
-
             card.innerHTML = `
-                <div class="project-card-inner">
-                    <div class="project-card-img" style="background: linear-gradient(135deg, ${p.color}, ${p.color}66); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:2.5rem; font-weight:600; letter-spacing:2px;">
-                        ${p.title.charAt(0)}
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-card-title">${p.title}</h3>
-                        <p class="project-card-desc">${p.desc}</p>
-                        <div class="project-card-tags">
-                            ${p.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('')}
-                        </div>
-                        ${renderSoftwareBadges(p.software)}
+                <div class="project-card-img" style="background: linear-gradient(135deg, ${p.color}, ${p.color}55);">
+                    <span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <div class="project-card-body">
+                    <h3 class="project-card-title">${p.title}</h3>
+                    <p class="project-card-desc">${p.desc}</p>
+                    <div class="project-card-tags">
+                        ${p.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('')}
                     </div>
                 </div>
             `;
@@ -137,30 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderProjectCards();
-
-    // ==================== TILT 3D ====================
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -8;
-            const rotateY = ((x - centerX) / centerX) * 8;
-            const inner = card.querySelector('.project-card-inner');
-            if (inner) {
-                inner.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            }
-        });
-
-        card.addEventListener('mouseleave', () => {
-            const inner = card.querySelector('.project-card-inner');
-            if (inner) {
-                inner.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-            }
-        });
-    });
 
     // ==================== MODAL ====================
     const modal = document.getElementById('projectModal');
@@ -350,82 +303,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================== VIEWER 360 INIT ====================
     try {
+        const frameFiles = [];
+        for (let i = 1; i <= 36; i++) {
+            frameFiles.push(`assets/images/360/1/100${String(i).padStart(2, '0')}.png`);
+        }
         const viewer = new Viewer360('viewerContainer', {
             totalFrames: 36,
-            framesPerRow: 36
+            framesPerRow: 6,
+            frameFiles: frameFiles
         });
     } catch (err) {
         console.warn('Viewer360 no disponible:', err.message);
-    }
-
-    // ==================== CAROUSEL ====================
-    const carouselTrack = document.getElementById('carouselTrack');
-    const carouselDots = document.getElementById('carouselDots');
-    const carouselPrev = document.getElementById('carouselPrev');
-    const carouselNext = document.getElementById('carouselNext');
-
-    if (carouselTrack) {
-        let currentSlide = 0;
-        let autoPlayTimer = null;
-        const slideData = projects;
-
-        function renderSlides() {
-            carouselTrack.innerHTML = slideData.map(p => `
-                <div class="carousel-slide" style="background: linear-gradient(135deg, ${p.color}, ${p.color}55);">
-                    <h3 class="carousel-slide-title">${p.title}</h3>
-                    <p class="carousel-slide-desc">${p.desc}</p>
-                    <div class="carousel-slide-tags">
-                        ${p.tags.map(t => `<span class="carousel-slide-tag">${t}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-
-            carouselDots.innerHTML = slideData.map((_, i) => `
-                <button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Ir a slide ${i + 1}"></button>
-            `).join('');
-        }
-
-        function goToSlide(index) {
-            currentSlide = (index + slideData.length) % slideData.length;
-            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-
-        function startAutoPlay() {
-            stopAutoPlay();
-            autoPlayTimer = setInterval(nextSlide, 4500);
-            carouselTrack.parentElement.addEventListener('mouseenter', stopAutoPlay);
-            carouselTrack.parentElement.addEventListener('mouseleave', startAutoPlay);
-        }
-
-        function stopAutoPlay() {
-            if (autoPlayTimer) {
-                clearInterval(autoPlayTimer);
-                autoPlayTimer = null;
-            }
-        }
-
-        renderSlides();
-        goToSlide(0);
-        startAutoPlay();
-
-        carouselPrev.addEventListener('click', () => { prevSlide(); stopAutoPlay(); startAutoPlay(); });
-        carouselNext.addEventListener('click', () => { nextSlide(); stopAutoPlay(); startAutoPlay(); });
-        carouselDots.addEventListener('click', (e) => {
-            const dot = e.target.closest('.carousel-dot');
-            if (dot) { goToSlide(parseInt(dot.dataset.index)); stopAutoPlay(); startAutoPlay(); }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (document.getElementById('carousel').closest(':target') || true) {
-                if (e.key === 'ArrowLeft' && document.querySelector('.carousel-container:hover')) { prevSlide(); stopAutoPlay(); startAutoPlay(); }
-                if (e.key === 'ArrowRight' && document.querySelector('.carousel-container:hover')) { nextSlide(); stopAutoPlay(); startAutoPlay(); }
-            }
-        });
     }
 });

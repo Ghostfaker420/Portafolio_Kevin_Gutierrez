@@ -10,6 +10,7 @@ class Viewer360 {
         this.spriteSrc = options.spriteSrc || null;
         this.totalFrames = options.totalFrames || 36;
         this.framesPerRow = options.framesPerRow || 36;
+        this.frameFiles = options.frameFiles || null;
 
         this.currentFrame = 0;
         this.isDragging = false;
@@ -19,18 +20,22 @@ class Viewer360 {
         this.autoRotateId = null;
         this.spriteImage = null;
         this.spriteLoaded = false;
+        this.frameImages = [];
         this._boundOnMove = null;
         this._boundOnUp = null;
         this._boundOnResize = null;
         this._boundOnKeydown = null;
 
-        this.demoMode = !this.spriteSrc;
+        this.demoMode = !this.spriteSrc && !this.frameFiles;
         this.resize();
         this.init();
     }
 
     init() {
-        if (this.demoMode) {
+        if (this.frameFiles) {
+            this.placeholder.style.display = 'none';
+            this.loadFrames();
+        } else if (this.demoMode) {
             this.placeholder.style.display = 'none';
             this.generateDemoSprite();
         } else {
@@ -65,6 +70,31 @@ class Viewer360 {
             this.render();
         };
         this.spriteImage.src = this.spriteSrc;
+    }
+
+    loadFrames() {
+        let loaded = 0;
+
+        for (let i = 0; i < this.totalFrames; i++) {
+            const img = new Image();
+            img.onload = () => {
+                if (this.demoMode) return;
+                loaded++;
+                if (loaded === this.totalFrames) {
+                    this.spriteLoaded = true;
+                    this.render();
+                }
+            };
+            img.onerror = () => {
+                if (this.demoMode) return;
+                this.placeholder.textContent = 'Error al cargar frames. Mostrando demo.';
+                this.demoMode = true;
+                this.generateDemoSprite();
+                this.render();
+            };
+            img.src = this.frameFiles[i];
+            this.frameImages[i] = img;
+        }
     }
 
     generateDemoSprite() {
@@ -246,24 +276,28 @@ class Viewer360 {
         if (!this.spriteLoaded && !this.demoMode) return;
 
         const size = this.canvas.width / 2;
+        if (size <= 0) return;
         this.ctx.clearRect(0, 0, size, size);
 
-        if (this.spriteImage) {
+        this.ctx.save();
+        this.ctx.beginPath();
+        this.ctx.arc(size / 2, size / 2, size / 2 - 4, 0, Math.PI * 2);
+        this.ctx.clip();
+
+        if (this.frameImages.length > 0) {
+            const img = this.frameImages[this.currentFrame];
+            if (img && img.complete && img.naturalWidth > 0) {
+                this.ctx.drawImage(img, 0, 0, size, size);
+            }
+        } else if (this.spriteImage) {
             const frameW = this.spriteImage.width / this.framesPerRow;
             const frameH = this.spriteImage.height / Math.ceil(this.totalFrames / this.framesPerRow);
             const row = Math.floor(this.currentFrame / this.framesPerRow);
             const col = this.currentFrame % this.framesPerRow;
-
-            const sx = col * frameW;
-            const sy = row * frameH;
-
-            this.ctx.save();
-            this.ctx.beginPath();
-            this.ctx.arc(size / 2, size / 2, size / 2 - 4, 0, Math.PI * 2);
-            this.ctx.clip();
-            this.ctx.drawImage(this.spriteImage, sx, sy, frameW, frameH, 0, 0, size, size);
-            this.ctx.restore();
+            this.ctx.drawImage(this.spriteImage, col * frameW, row * frameH, frameW, frameH, 0, 0, size, size);
         }
+
+        this.ctx.restore();
 
         const angle = Math.round((this.currentFrame / this.totalFrames) * 360);
         if (this.angleDisplay) {
