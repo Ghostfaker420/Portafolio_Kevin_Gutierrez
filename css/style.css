@@ -17,7 +17,7 @@
   --text-secondary: #8A92C0;
   --text-muted: #6A72A0;
   --font-display: 'Big Shoulders Display', 'Impact', sans-serif;
-  --font-body: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Big Shoulders Display', 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
   --easing: cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.5s var(--easing);
   --transition-fast: 0.25s var(--easing);
@@ -40,6 +40,7 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
 
 body {
   font-family: var(--font-body);
+  font-weight: 500;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -221,7 +222,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 
 .nav-link {
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
   transition: color var(--transition-fast);
   position: relative;
@@ -341,24 +342,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 
 .hero-text { flex: 1; }
 
-.hero-greeting {
-  font-size: 0.9rem;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 16px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeInUp 0.8s var(--easing) 0.2s forwards;
-}
-
 .hero-name {
-  font-family: var(--font-display);
+  font-family: 'Rampart One', var(--font-display);
   font-size: 4.2rem;
-  font-weight: 700;
-  line-height: 1.1;
+  font-weight: 400;
+  line-height: 1.2;
   margin-bottom: 12px;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
   opacity: 0;
   animation: fadeInUp 0.8s var(--easing) 0.4s forwards;
 }
@@ -378,13 +368,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .hero-name-line:nth-child(1) span { animation-delay: 0.4s; }
 .hero-name-line:nth-child(2) span { animation-delay: 0.6s; }
 
-.hero-title {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-weight: 400;
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
   opacity: 0;
-  animation: fadeInUp 0.8s var(--easing) 0.8s forwards;
+  animation: fadeInUp 0.8s var(--easing) 0.6s forwards;
 }
 
 .hero-desc {
@@ -608,12 +600,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   margin-bottom: 16px;
   font-size: 0.95rem;
   line-height: 1.8;
+  font-weight: 500;
 }
 
 .about-text p:first-child {
   font-size: 1.1rem;
   color: var(--text-primary);
-  font-weight: 400;
+  font-weight: 500;
   border-left: 3px solid var(--accent);
   padding-left: 20px;
 }
@@ -637,7 +630,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   padding: 10px 20px;
   border-radius: 50px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 1px solid var(--accent-dim-2);
   transition: transform 0.25s var(--easing), border-color 0.25s var(--easing);
   position: relative;
@@ -704,7 +697,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 65%;
   background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%);
   pointer-events: none;
   z-index: 1;
@@ -735,7 +728,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 32px 32px 28px;
+  padding: 60px 32px 28px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -755,6 +748,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   color: var(--text-secondary);
   line-height: 1.6;
   max-width: 600px;
+  font-weight: 500;
   text-shadow: 0 1px 12px rgba(0,0,0,0.5);
 }
 
@@ -772,8 +766,27 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   background: rgba(3, 7, 30, 0.6);
   backdrop-filter: blur(4px);
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 600;
   border: 1px solid var(--accent-dim-2);
+}
+
+.project-card-software {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.project-card-software-badge {
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(3, 7, 30, 0.6);
+  backdrop-filter: blur(4px);
+  color: var(--accent-warm);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid var(--accent-dim);
 }
 
 /* ===== MODAL ===== */
@@ -899,6 +912,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 
 .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
+.modal-software {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--accent-dim-2);
+}
+
 .modal-gif-player {
   width: 100%;
   background: var(--bg-card);
@@ -970,7 +992,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   border: 1px solid var(--accent-dim-2);
   cursor: pointer;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   font-family: var(--font-body);
   transition: color 0.25s var(--easing), border-color 0.25s var(--easing), background 0.25s var(--easing);
 }
@@ -1034,7 +1056,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .viewer-angle {
   color: var(--text-muted);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 36px;
   text-align: center;
   font-variant-numeric: tabular-nums;
@@ -1046,6 +1068,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   font-size: 0.85rem;
   margin-top: 28px;
   line-height: 1.6;
+  font-weight: 500;
   padding: 14px 28px;
   max-width: 520px;
   margin-left: auto;
@@ -1137,6 +1160,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   color: var(--text-secondary);
   line-height: 1.6;
   max-width: 360px;
+  font-weight: 500;
 }
 
 .carousel-btn {
@@ -1154,13 +1178,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.25s var(--easing), border-color 0.25s var(--easing), background 0.25s var(--easing);
+  transition: color 0.25s var(--easing), border-color 0.25s var(--easing), background 0.25s var(--easing), opacity 0.25s var(--easing);
   z-index: 2;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.carousel-container:hover .carousel-btn {
   opacity: 1;
   pointer-events: auto;
 }
@@ -1251,6 +1270,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 2px;
+  font-weight: 500;
 }
 
 .contact-divider {

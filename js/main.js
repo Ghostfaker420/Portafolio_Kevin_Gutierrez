@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Arte Urbano',
             desc: 'Dirección de arte y diseño de murales de gran formato con técnicas digitales y modelado 3D escultórico.',
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
+            software: ['Blender', 'Photoshop', 'Illustrator'],
             color: '#E85D04',
             img: 'assets/images/Arte urbano/kevin 1.PNG',
             secondaryImg: 'assets/images/Arte urbano/Kevin 2.PNG'
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Iconografia Vectoral',
             desc: 'Creación de sistemas de iconografía vectorial para plataformas digitales, con enfoque en consistencia visual y escalabilidad.',
             tags: ['Vectorial', 'Iconografía', 'Sistemas de Diseño'],
+            software: ['Illustrator', 'Figma', 'Photoshop'],
             color: '#9D0208',
             img: 'assets/images/Iconografía/iconos.jpeg'
         },
@@ -53,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Motion Graphics',
             desc: 'Animación y gráficos en movimiento para campañas digitales y contenido audiovisual.',
             tags: ['Motion Graphics', 'Animación', 'After Effects'],
+            software: ['After Effects', 'Premiere', 'Illustrator'],
             color: '#9D0208',
             img: 'assets/images/Motion.gif',
             type: 'gif'
@@ -86,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-card-tags">
                         ${p.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('')}
                     </div>
+                    <div class="project-card-software">
+                        ${p.software.map(s => `<span class="project-card-software-badge">${s}</span>`).join('')}
+                    </div>
                 </div>
             `;
 
@@ -109,6 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
         modalTitle.textContent = project.title;
         modalDesc.textContent = project.desc;
         modalTags.innerHTML = project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
+        if (project.software) {
+            const swRow = document.createElement('div');
+            swRow.className = 'modal-software';
+            swRow.innerHTML = project.software.map(s => `<span class="project-card-software-badge">${s}</span>`).join('');
+            modalTags.after(swRow);
+        }
 
         if (project.img) {
             modalImg.style.background = 'none';
