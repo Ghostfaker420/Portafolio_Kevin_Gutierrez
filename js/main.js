@@ -35,34 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================== PROJECT DATA ====================
     const projects = [
         {
-            title: 'Identidad de Marca',
-            desc: 'Desarrollo completo de branding para una startup tecnológica, incluyendo logotipo, paleta cromática y aplicaciones.',
-            tags: ['Branding', 'Illustrator', 'Figma'],
-            color: '#E85D04',
-            img: null
-        },
-        {
-            title: 'Diseño Editorial',
-            desc: 'Maquetación y diseño de una revista cultural con enfoque en tipografía, jerarquía visual y narrativa gráfica.',
-            tags: ['InDesign', 'Editorial', 'Tipografía'],
-            color: '#9D0208',
-            img: null
-        },
-        {
-            title: 'UX/UI Aplicación',
-            desc: 'Diseño de interfaz y experiencia de usuario para una app de productividad, desde wireframes hasta prototipo interactivo.',
-            tags: ['UX/UI', 'Figma', 'Prototipado'],
-            color: '#E85D04',
-            img: null
-        },
-        {
-            title: 'Modelado 3D',
-            desc: 'Modelado y renderizado de producto para catálogo comercial, con texturizado realista e iluminación profesional.',
-            tags: ['Blender', '3D', 'Render'],
-            color: '#FFBA08',
-            img: null
-        },
-        {
             title: 'Arte Urbano',
             desc: 'Dirección de arte y diseño de murales de gran formato con técnicas digitales y modelado 3D escultórico.',
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
@@ -97,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             card.innerHTML = `
-                <div class="project-card-img"${p.img ? '' : ` style="background: linear-gradient(135deg, ${p.color}, ${p.color}55);"`}>
+                <div class="project-card-img">
                     ${p.img ? `<img src="${p.img}" alt="${p.title}">` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
                 </div>
                 <div class="project-card-body">
@@ -135,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (project.secondaryImg) {
                 modalImg.innerHTML = `
                     <div class="modal-img-grid modal-img-grid--dual">
-                        <div class="modal-img-primary"><img src="${project.img}" alt="${project.title}"></div>
-                        <div class="modal-img-secondary"><img src="${project.secondaryImg}" alt="${project.title}"></div>
+                        <div class="modal-img-primary"><img src="${project.img}" alt="${project.title}" width="800" height="500"></div>
+                        <div class="modal-img-secondary"><img src="${project.secondaryImg}" alt="${project.title}" width="800" height="140"></div>
                     </div>`;
             } else {
-                modalImg.innerHTML = `<img src="${project.img}" alt="${project.title}" style="width:100%;max-height:70vh;object-fit:contain;background:var(--bg-secondary);">`;
+                modalImg.innerHTML = `<img src="${project.img}" alt="${project.title}" width="800" height="600" style="width:100%;max-height:75vh;object-fit:contain;background:var(--bg-card);padding:20px;">`;
             }
         } else {
             modalImg.style.background = `linear-gradient(135deg, ${project.color}, ${project.color}66)`;
@@ -259,61 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     revealElements.forEach(el => observer.observe(el));
-
-    // ==================== CONTACT FORM ====================
-    const contactForm = document.getElementById('contactForm');
-    const formFields = contactForm.querySelectorAll('input, textarea');
-
-    function clearErrors() {
-        formFields.forEach(f => {
-            f.removeAttribute('aria-invalid');
-            const err = f.parentNode.querySelector('.form-error');
-            if (err) err.remove();
-        });
-    }
-
-    function showError(field, message) {
-        field.setAttribute('aria-invalid', 'true');
-        const err = document.createElement('span');
-        err.className = 'form-error';
-        err.textContent = message;
-        err.role = 'alert';
-        field.parentNode.appendChild(err);
-    }
-
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        clearErrors();
-        let hasError = false;
-
-        formFields.forEach(f => {
-            if (f.hasAttribute('required') && !f.value.trim()) {
-                const label = contactForm.querySelector(`label[for="${f.id}"]`);
-                showError(f, `El campo «${label ? label.textContent : f.name}» es obligatorio.`);
-                hasError = true;
-            } else if (f.type === 'email' && f.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim())) {
-                showError(f, 'Introduce una dirección de correo válida (ej. nombre@dominio.com).');
-                hasError = true;
-            }
-        });
-
-        if (hasError) {
-            const firstErr = contactForm.querySelector('[aria-invalid="true"]');
-            if (firstErr) firstErr.focus();
-            return;
-        }
-
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        btn.textContent = '¡Mensaje enviado!';
-        btn.style.pointerEvents = 'none';
-        contactForm.reset();
-
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.pointerEvents = '';
-        }, 3000);
-    });
 
     // ==================== VIEWER 360 INIT ====================
     try {

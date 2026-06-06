@@ -29,7 +29,7 @@ class Carousel {
             const el = document.createElement('div');
             el.className = 'carousel-slide' + (slide.img ? ' has-img' : '');
             el.innerHTML = slide.img
-                ? `<img class="carousel-slide-img" src="${slide.img}" alt="${slide.title}" loading="${i === 0 ? 'eager' : 'lazy'}">
+                ? `<img class="carousel-slide-img" src="${slide.img}" alt="${slide.title}" width="600" height="750" loading="${i === 0 ? 'eager' : 'lazy'}">
                    ${slide.title ? `<h3 class="carousel-slide-title">${slide.title}</h3>` : ''}
                    ${slide.desc ? `<p class="carousel-slide-desc">${slide.desc}</p>` : ''}`
                 : `<div class="carousel-slide-icon">${slide.icon || '🖼️'}</div>
