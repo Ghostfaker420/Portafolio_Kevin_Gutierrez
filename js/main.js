@@ -63,18 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
             img: null
         },
         {
-            title: 'Muralismo / Arte Urbano',
+            title: 'Arte Urbano',
             desc: 'Dirección de arte y diseño de murales de gran formato con técnicas digitales y modelado 3D escultórico.',
             tags: ['Arte Urbano', 'Muralismo', 'Escultura Digital'],
             color: '#E85D04',
-            img: null
+            img: 'assets/images/Arte urbano/kevin 1.PNG',
+            secondaryImg: 'assets/images/Arte urbano/Kevin 2.PNG'
         },
         {
-            title: 'Iconografía Vectorial',
+            title: 'Iconografia Vectoral',
             desc: 'Creación de sistemas de iconografía vectorial para plataformas digitales, con enfoque en consistencia visual y escalabilidad.',
             tags: ['Vectorial', 'Iconografía', 'Sistemas de Diseño'],
             color: '#9D0208',
-            img: null
+            img: 'assets/images/Iconografía/iconos.jpeg'
         }
     ];
 
@@ -96,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             card.innerHTML = `
-                <div class="project-card-img" style="background: linear-gradient(135deg, ${p.color}, ${p.color}55);">
-                    <span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>
+                <div class="project-card-img"${p.img ? '' : ` style="background: linear-gradient(135deg, ${p.color}, ${p.color}55);"`}>
+                    ${p.img ? `<img src="${p.img}" alt="${p.title}">` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
                 </div>
                 <div class="project-card-body">
                     <h3 class="project-card-title">${p.title}</h3>
@@ -129,12 +130,25 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDesc.textContent = project.desc;
         modalTags.innerHTML = project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
 
-        modalImg.style.background = `linear-gradient(135deg, ${project.color}, ${project.color}66)`;
-        modalImg.innerHTML = '';
-        const letter = document.createElement('span');
-        letter.style.cssText = 'display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:4rem; font-weight:600; color:rgba(255,255,255,0.2);';
-        letter.textContent = project.title.charAt(0);
-        modalImg.appendChild(letter);
+        if (project.img) {
+            modalImg.style.background = 'none';
+            if (project.secondaryImg) {
+                modalImg.innerHTML = `
+                    <div class="modal-img-grid modal-img-grid--dual">
+                        <div class="modal-img-primary"><img src="${project.img}" alt="${project.title}"></div>
+                        <div class="modal-img-secondary"><img src="${project.secondaryImg}" alt="${project.title}"></div>
+                    </div>`;
+            } else {
+                modalImg.innerHTML = `<img src="${project.img}" alt="${project.title}" style="width:100%;max-height:70vh;object-fit:contain;background:var(--bg-secondary);">`;
+            }
+        } else {
+            modalImg.style.background = `linear-gradient(135deg, ${project.color}, ${project.color}66)`;
+            modalImg.innerHTML = '';
+            const letter = document.createElement('span');
+            letter.style.cssText = 'display:flex; align-items:center; justify-content:center; width:100%; height:100%; font-size:4rem; font-weight:600; color:rgba(255,255,255,0.2);';
+            letter.textContent = project.title.charAt(0);
+            modalImg.appendChild(letter);
+        }
         modalImg.style.display = 'flex';
 
         modal.classList.add('open');
@@ -320,36 +334,42 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         const carouselSlides = [
             {
+                img: 'assets/images/Carrusel/1.jpeg',
                 icon: '🎨',
                 title: 'Identidad de Marca',
                 desc: 'Desarrollo completo de branding para startups y empresas consolidadas.',
                 color: '#E85D04'
             },
             {
+                img: 'assets/images/Carrusel/2.jpeg',
                 icon: '📖',
                 title: 'Diseño Editorial',
                 desc: 'Maquetación de revistas, libros y catálogos con jerarquía visual cuidada.',
                 color: '#9D0208'
             },
             {
+                img: 'assets/images/Carrusel/3.jpeg',
                 icon: '📱',
                 title: 'UX/UI',
                 desc: 'Interfaces funcionales y atractivas centradas en la experiencia de usuario.',
                 color: '#0C0F38'
             },
             {
+                img: 'assets/images/Carrusel/4.jpeg',
                 icon: '🎲',
                 title: 'Modelado 3D',
                 desc: 'Renderizado de producto y visualización arquitectónica con Blender.',
                 color: '#FFBA08'
             },
             {
+                img: 'assets/images/Carrusel/5.jpeg',
                 icon: '🧱',
                 title: 'Arte Urbano',
                 desc: 'Murales y escultura digital que transforman el espacio público.',
                 color: '#E85D04'
             },
             {
+                img: 'assets/images/Carrusel/6.jpeg',
                 icon: '✏️',
                 title: 'Ilustración Vectorial',
                 desc: 'Sistemas de iconografía y gráficos vectoriales para plataformas digitales.',

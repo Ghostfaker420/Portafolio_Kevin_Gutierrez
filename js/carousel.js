@@ -27,7 +27,7 @@ class Carousel {
         this.track.innerHTML = '';
         this.slides.forEach((slide, i) => {
             const el = document.createElement('div');
-            el.className = 'carousel-slide';
+            el.className = 'carousel-slide' + (slide.img ? ' has-img' : '');
             el.innerHTML = slide.img
                 ? `<img class="carousel-slide-img" src="${slide.img}" alt="${slide.title}" loading="${i === 0 ? 'eager' : 'lazy'}">
                    ${slide.title ? `<h3 class="carousel-slide-title">${slide.title}</h3>` : ''}
@@ -35,7 +35,7 @@ class Carousel {
                 : `<div class="carousel-slide-icon">${slide.icon || '🖼️'}</div>
                    ${slide.title ? `<h3 class="carousel-slide-title">${slide.title}</h3>` : ''}
                    ${slide.desc ? `<p class="carousel-slide-desc">${slide.desc}</p>` : ''}`;
-            if (slide.color) {
+            if (slide.color && !slide.img) {
                 el.style.background = `linear-gradient(135deg, ${slide.color}, ${slide.color}55)`;
             }
             this.track.appendChild(el);
