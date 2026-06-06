@@ -717,6 +717,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   transition: transform 0.8s var(--easing), filter 0.6s var(--easing);
 }
 
+.project-card-img--gif {
+  background: var(--bg-card);
+}
+
+.project-card-img--gif img {
+  object-fit: cover;
+}
+
 .project-card:hover .project-card-img img {
   transform: scale(1.06);
   filter: brightness(1.08) saturate(1.1);
@@ -890,6 +898,23 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 }
 
 .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.modal-gif-player {
+  width: 100%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--accent-dim-2);
+}
+
+.modal-gif-player img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 70vh;
+  object-fit: contain;
+}
 
 /* ===== VIEWER 360 ===== */
 .viewer360 { background: var(--bg-secondary); position: relative; }

@@ -48,6 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['Vectorial', 'Iconografía', 'Sistemas de Diseño'],
             color: '#9D0208',
             img: 'assets/images/Iconografía/iconos.jpeg'
+        },
+        {
+            title: 'Motion Graphics',
+            desc: 'Animación y gráficos en movimiento para campañas digitales y contenido audiovisual.',
+            tags: ['Motion Graphics', 'Animación', 'After Effects'],
+            color: '#9D0208',
+            img: 'assets/images/Motion.gif',
+            type: 'gif'
         }
     ];
 
@@ -69,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             card.innerHTML = `
-                <div class="project-card-img">
-                    ${p.img ? `<img src="${p.img}" alt="${p.title}">` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
+                <div class="project-card-img${p.type === 'gif' ? ' project-card-img--gif' : ''}">
+                    ${p.img ? `<img src="${p.img}" alt="${p.title}" ${p.type === 'gif' ? '' : 'loading="lazy"'}>` : `<span class="project-card-index">${String(i + 1).padStart(2, '0')}</span>`}
                 </div>
                 <div class="project-card-body">
                     <h3 class="project-card-title">${p.title}</h3>
@@ -104,7 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (project.img) {
             modalImg.style.background = 'none';
-            if (project.secondaryImg) {
+            if (project.type === 'gif') {
+                modalImg.innerHTML = `
+                    <div class="modal-gif-player">
+                        <img src="${project.img}" alt="${project.title}">
+                    </div>`;
+            } else if (project.secondaryImg) {
                 modalImg.innerHTML = `
                     <div class="modal-img-grid modal-img-grid--dual">
                         <div class="modal-img-primary"><img src="${project.img}" alt="${project.title}" width="800" height="500"></div>
