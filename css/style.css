@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: var(--transition-fast);
+  transition: transform 0.25s var(--easing), opacity 0.25s var(--easing);
 }
 
 .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -564,7 +564,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: var(--transition);
+  transition: background 0.5s var(--easing), color 0.5s var(--easing), transform 0.5s var(--easing), box-shadow 0.5s var(--easing);
   font-family: var(--font-body);
   position: relative;
   overflow: hidden;
@@ -639,7 +639,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid var(--accent-dim-2);
-  transition: var(--transition-fast);
+  transition: transform 0.25s var(--easing), border-color 0.25s var(--easing);
   position: relative;
   overflow: hidden;
 }
@@ -678,7 +678,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   overflow: hidden;
   border: 1px solid var(--accent-dim-2);
   cursor: pointer;
-  transition: 0.5s var(--easing);
+  transition: border-color 0.5s var(--easing), box-shadow 0.5s var(--easing);
   position: relative;
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -844,7 +844,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .viewer-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   background: var(--bg-card);
   border-radius: var(--radius);
   border: 1px solid var(--accent-dim-2);
@@ -889,7 +889,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   font-size: 0.8rem;
   font-weight: 500;
   font-family: var(--font-body);
-  transition: var(--transition-fast);
+  transition: color 0.25s var(--easing), border-color 0.25s var(--easing), background 0.25s var(--easing);
 }
 
 .viewer-btn:hover {
@@ -901,6 +901,50 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
 .viewer-btn.active {
   color: var(--accent);
   border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.viewer-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  max-width: 280px;
+  height: 6px;
+  background: var(--accent-dim-2);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.viewer-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-card);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  transition: transform var(--transition-fast);
+}
+
+.viewer-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.viewer-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-card);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.viewer-slider:hover {
   background: var(--accent-dim);
 }
 
@@ -919,6 +963,150 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   font-size: 0.85rem;
   margin-top: 28px;
   line-height: 1.6;
+  padding: 14px 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+              linear-gradient(135deg, var(--accent-dim-2), var(--accent), var(--accent-dim-2)) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: filter var(--transition-fast);
+}
+
+.viewer-instructions:hover {
+  filter: brightness(1.2);
+}
+
+/* ===== GALLERY CAROUSEL ===== */
+.gallery { background: var(--bg-primary); position: relative; }
+
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent-dim-2);
+  background: var(--bg-card);
+  position: relative;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  user-select: none;
+  position: relative;
+}
+
+.carousel-slide-img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  background: var(--bg-secondary);
+}
+
+.carousel-slide-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.carousel-slide-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.carousel-slide-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-dim-2);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s var(--easing), border-color 0.25s var(--easing), background 0.25s var(--easing);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-prev { left: -52px; }
+.carousel-next { right: -52px; }
+
+.carousel-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--accent-dim);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-dim-2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s var(--easing), transform 0.3s var(--easing);
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+.carousel-dot:hover {
+  background: var(--accent-dim);
 }
 
 /* ===== CONTACT ===== */
@@ -973,7 +1161,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   border-radius: 50%;
   background: var(--accent-dim-2);
   color: var(--accent);
-  transition: var(--transition-fast);
+  transition: background 0.25s var(--easing), color 0.25s var(--easing), transform 0.25s var(--easing), border-color 0.25s var(--easing);
   border: 1px solid transparent;
 }
 
@@ -1002,7 +1190,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.9rem;
-  transition: var(--transition-fast);
+  transition: border-color 0.25s var(--easing), box-shadow 0.25s var(--easing);
   outline: none;
 }
 
@@ -1023,7 +1211,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   color: var(--text-muted);
   font-size: 0.9rem;
   pointer-events: none;
-  transition: var(--transition-fast);
+  transition: top 0.25s var(--easing), transform 0.25s var(--easing), font-size 0.25s var(--easing), color 0.25s var(--easing);
   background: var(--bg-secondary);
   padding: 0 4px;
 }
@@ -1198,6 +1386,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; lin
   .project-card { grid-template-columns: 1fr; }
   .project-card-img { min-height: 160px; }
   .project-card-index { font-size: 2.2rem; }
+
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-prev { left: -44px; }
+  .carousel-next { right: -44px; }
 
   @media (hover: hover) and (pointer: fine) {
     body { cursor: auto; }

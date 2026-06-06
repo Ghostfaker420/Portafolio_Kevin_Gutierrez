@@ -315,4 +315,50 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (err) {
         console.warn('Viewer360 no disponible:', err.message);
     }
+
+    // ==================== CAROUSEL INIT ====================
+    try {
+        const carouselSlides = [
+            {
+                icon: '🎨',
+                title: 'Identidad de Marca',
+                desc: 'Desarrollo completo de branding para startups y empresas consolidadas.',
+                color: '#E85D04'
+            },
+            {
+                icon: '📖',
+                title: 'Diseño Editorial',
+                desc: 'Maquetación de revistas, libros y catálogos con jerarquía visual cuidada.',
+                color: '#9D0208'
+            },
+            {
+                icon: '📱',
+                title: 'UX/UI',
+                desc: 'Interfaces funcionales y atractivas centradas en la experiencia de usuario.',
+                color: '#0C0F38'
+            },
+            {
+                icon: '🎲',
+                title: 'Modelado 3D',
+                desc: 'Renderizado de producto y visualización arquitectónica con Blender.',
+                color: '#FFBA08'
+            },
+            {
+                icon: '🧱',
+                title: 'Arte Urbano',
+                desc: 'Murales y escultura digital que transforman el espacio público.',
+                color: '#E85D04'
+            },
+            {
+                icon: '✏️',
+                title: 'Ilustración Vectorial',
+                desc: 'Sistemas de iconografía y gráficos vectoriales para plataformas digitales.',
+                color: '#9D0208'
+            }
+        ];
+
+        new Carousel('carouselContainer', { slides: carouselSlides });
+    } catch (err) {
+        console.warn('Carrusel no disponible:', err.message);
+    }
 });
